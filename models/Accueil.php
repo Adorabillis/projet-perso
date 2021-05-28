@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Consoles
+class Accueil
 {
 	
 }

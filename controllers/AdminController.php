@@ -49,7 +49,6 @@ class AdminController
 		
 		
 		//si l'identifiant existe dans la base alors âdmin contiendrales infos de cet admin
-		
 		//sinon $admin contiendra false
 		
 		if(!$admin)
@@ -65,7 +64,7 @@ class AdminController
 				//connecter l'utilisateur
 				$_SESSION['admin'] = $admin['prenom'].' '.$admin['nom'];
 				//redirige vers la page tableau de bord du backoffice
-				header('location:index.php?page=tableauDeBord');
+				header('location:index.php?page=dashboard');
 				exit;
 			}
 			else

@@ -39,9 +39,14 @@ else
 			$controller = new Controllers\AdminController();
 			$controller -> display();
 			break;
+			case 'admin':
+				//include 'controllers/TableauDeBordController.php';
+				$controller = new Controllers\AdminController();
+				$controller -> display();
+				break;
 		case 'dashboard':
 			//include 'controllers/TableauDeBordController.php';
-			$controller = new Controllers\TableauDeBordController();
+			$controller = new Controllers\DashboardController();
 			$controller -> display();
 			break;
 		case 'createMeal':
