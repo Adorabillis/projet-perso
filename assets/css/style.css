@@ -1,0 +1,36 @@
+/***************/
+/***VARIABLES***/
+/***************/
+:root {
+  -head-bg-color: yellow;
+}
+
+/****************/
+/*****HEADER*****/
+/****************/
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: hotpink;
+    padding: 1em;
+}
+
+nav a {
+    padding: 0.3em;
+}
+
+.admin {
+    display:flex;
+    color: lime;
+    background-color: cyan;
+}
+
+.logo {
+    background-color: lime;
+}
