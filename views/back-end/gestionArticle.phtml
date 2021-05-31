@@ -1,7 +1,7 @@
  <section>
- <h2>Gestion des plats</h2>
+ <h2>Gestion des articles</h2>
     
-        <button><a href="index.php?page=createMeal">Ajouter un plat</a></button>
+        <button><a href="index.php?page=addArticle">Ajouter un article</a></button>
     
         <table>
             <tr>
@@ -23,7 +23,7 @@
                 <td><?= $article['src'] ?></td>
                 <td><?= $article['alt'] ?></td>
                 <td><button><a href="index.php?page=modifyArticle&id=<?=$article['id_article']?>"><i class="fas fa-pen-nib"></i></a></a></button></td>
-                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteMeal&id=".$meal['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteArticle&id=".$article['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
             </tr>
             <?php endforeach; ?>
         </table>

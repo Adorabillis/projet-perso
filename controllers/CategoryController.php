@@ -10,79 +10,64 @@ class MealController {
 	{
 		$this -> redirectIfNotAdmin();
 		//si le formulaire a été soumis
-	
 	}
 
 	public function display()
 	{
-		//afficher les plats
-		$model = new \Models\Meal();
-		$meals = $model -> getAllMeals();
+		//afficher les Catégories
 		$model = new \Models\Category();
 		$categories = $model -> getAllCategory();
-            $template = 'views/meal.phtml';
-            include 'views/layout_front.phtml';
+            $template = 'views/back-end/category.phtml';
+            include 'views/layout.phtml';
 	}
 		public function delete()
 	{
-	    $model = new \Models\Meal();
-	    $model -> deleteMeal($_GET['id']);
+		//supprimer une catégorie
+	    $model = new \Models\Category();
+	    $model -> deleteCategory($_GET['id']);
 	}
 	public function displayAdd()
 	{
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();
-            $template = 'views/addMeal.phtml';
-            include 'views/layout_front.phtml';
+            $template = 'views/back-end/add/addCategory.phtml';
+            include 'views/layout.phtml';
 	}
 	
 	public function AddSubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
 		$nom = $_POST['name'];
-		$image = "img/menus/{$_FILES['img']['name']}";
-		$alt = $_POST['alt'];
-		$id_category = $_POST['category'];
-		
-		//upload mon image
-		move_uploaded_file ($_FILES['img']['tmp_name'], $image );
-		
+		$id = $_POST['category'];
+
 		//mettre les datas en bdd
-		$model = new \Models\Meal();
-		$model -> AddMeal($nom, $image, $alt, $id_category);
+		$model = new \Models\Category();
+		$model -> AddCategory($nom);
             
-		header('location:index.php?page=meal');
+		header('location:index.php?page=category');
 			exit;
 	}
 		public function displayModify()
 	{
-	    $model = new \Models\Meal();
-	    $meal = $model -> findMealById($_GET['id']);
+	    $model = new \Models\Category();
+	    $category = $model -> findCategoryById($_GET['id']);
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();  
-            $template = 'views/modifyMeal.phtml';
-            include 'views/layout_front.phtml';
+        $template = 'views/modifyCategory.phtml';
+        include 'views/layout.phtml';
 	}
 	
 	public function ModifySubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
 		$nom = $_POST['name'];
-		if (empty($_FILES['img']['name'])) {
-			$image = $_POST['imgBdd'];
-		}
-		else {
-			$image = "img/menus/{$_FILES['img']['name']}";
-			move_uploaded_file ($_FILES['img']['tmp_name'], $image );
-		}
-		$alt = $_POST['alt'];
 		$id_category = $_POST['category'];
 		
 		//mettre les datas en bdd
-		$model = new \Models\Meal();
-		$modifyMeal = $model -> ModifyMeal($_GET['id'], $nom, $image, $alt, $id_category);
+		$model = new \Models\Category();
+		$modifyMeal = $model -> ModifyCategory($_GET['id'], $nom, $id_category);
             
-		header('location:index.php?page=meal');
+		header('location:index.php?page=category');
 			exit;
 	}
 	

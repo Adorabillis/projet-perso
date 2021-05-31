@@ -19,7 +19,7 @@ class BlogController {
 		$categories = $model -> getAllCategory();
 		$model1 = new \Models\Article();
 		$articles = $model1 -> getAllArticles();
-        $template = 'views/blog.phtml';
+        $template = 'views/back-end/gestionArticle.phtml';
         include 'views/layout.phtml';
 	}
 		public function delete()
@@ -33,25 +33,26 @@ class BlogController {
 	    $categories = $model -> getAllCategory();
 	    $model1 = new \Models\Author();
 	    $categories = $model1 -> getAllAuthor();
-        $template = 'views/addArticle.phtml';
+        $template = 'views/back-end/add/addArticle.phtml';
         include 'views/layout.phtml';
 	}
 	
 	public function AddSubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
-		$id_category = $_POST['category'];
-		$id_author = $_POST['author'];
-		$titre = $_POST['title'];
-		$image = "img/blog/{$_FILES['src']['name']}";
+		$category = $_POST['category'];
+		$author = $_POST['author'];
+		$title = $_POST['title'];
+		$description = $_POST['texte'];
+		$src = "img/blog/{$_FILES['src']['name']}";
 		$alt = $_POST['alt'];
 		
 		//upload mon image
-		move_uploaded_file ($_FILES['src']['tmp_name'], $image );
+		move_uploaded_file ($_FILES['src']['tmp_name'], $src);
 		
 		//mettre les datas en bdd
 		$model = new \Models\Article();
-		$model -> AddArticle($category, $title, $content, $src, $alt, $author);
+		$model -> AddArticle($category, $title, $description, $src, $alt, $author);
             
 		header('location:index.php?page=gestionArticle');
 			exit;
@@ -62,28 +63,29 @@ class BlogController {
 	    $meal = $model -> getArticleById($_GET['id_article']);
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();  
-            $template = 'views/modifyArticle.phtml';
+            $template = 'views//back-end/modify/modifyArticle.phtml';
             include 'views/layout.phtml';
 	}
 	
 	public function ModifySubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
-		$titre = $_POST['titre'];
+		$category = $_POST['category'];
+		$title = $_POST['titre'];
+		$description = $_POST['texte'];
 		if (empty($_FILES['src']['name'])) {
-			$image = $_POST['imgBdd'];
+			$src = $_POST['imgBdd'];
 		}
 		else {
-			$image = "img/blog/{$_FILES['img']['name']}";
-			move_uploaded_file ($_FILES['img']['tmp_name'], $image );
+			$src = "img/blog/{$_FILES['img']['name']}";
+			move_uploaded_file ($_FILES['img']['tmp_name'], $src );
 		}
 		$alt = $_POST['alt'];
-		$id_category = $_POST['category'];
-		$id_author = $_POST['author'];
+		$author = $_POST['author'];
 		
 		//mettre les datas en bdd
 		$model = new \Models\Article();
-		$modifyMeal = $model -> ModifyArticle($_GET['id_article'], $category, $title, $content, $src, $alt, $author);
+		$modifyArticle = $model -> ModifyArticle($_GET['id_article'], $category, $title, $description, $src, $alt, $author);
             
 		header('location:index.php?page=gestionArticle');
 			exit;
