@@ -14,12 +14,11 @@ class DashboardController
 	
 	public function display()
 	{
-			$model = new \Models\Meal();
-			$nb = $model -> CountMeal();
+		
 		
 		//afficher le formulaire de connexion
 		
-            $template = 'views/dashboard.phtml';
-            include 'views/layout_front.phtml';
+            $template = 'back-end/dashboard.phtml';
+            include 'views/layout.phtml';
 	}
 }

@@ -1,0 +1,40 @@
+<main>
+	
+	<h3>Ajouter un article</h3>
+    
+	<form method="post" enctype="multipart/form-data"> <!--action="article.phtml-->
+	    <p>
+		    <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <option value="">--Please choose an option--</option>
+			    <?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id_category'] ?>"><?= htmlspecialchars($categorie['category_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+        <p>
+            <label for='author'>Auteur</label>
+            <select name="author" id="author">
+			    <option value="">--Please choose an option--</option>
+			    <?php foreach($authors as $author): ?>
+                <option value="<?= $author['id_author'] ?>"><?= htmlspecialchars($author['first_name'], $author['last_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+		<p>
+		    <label for='title'>Titre de l'article</label>
+		    <input type="text" name="title" id="title"/>
+		</p>
+		<p>
+			<label for="src">Image</label>
+			<input type="file" name="src" id="src"/>
+		</p>
+		<p>	
+			<label for="alt">Alt</label>
+			<input type="text" name="alt" id="alt"/>
+		</p>
+
+			<button type="submit">Enregistrer</button>
+	</form>
+	
+</main>
