@@ -20,27 +20,28 @@
 			<img src="" alt="">
 		</div>
 		<nav>
-			<a href="index.php">Home</a>
-			<a href="#">Jeu</a>
-			<a href="#">Merch</a>
-			<a href="#">About</a>
-	
-			<?php if(isset($_SESSION['admin'])): ?>
-				<a href="index.php?page=consoles">Consoles</a>
-			<?php endif; ?>
-			<a href="#">Log in</a>
-			<?php if(isset($_SESSION['admin'])): ?>
-				<a href="index.php?page=dashboard">Dashboard</a>
-				<a href="index.php?page=admin&action=deco">Log out</a>
-				Bonjour <?= $_SESSION['admin'] ?>
-			<?php endif; ?>
+			<div class="home">
+				<a href="index.php">Home</a>
+				<a href="#">Jeu</a>
+				<a href="#">Merch</a>
+				<a href="#">About</a>
+				<a href="#">Connexion</a>
+			</div>
+			<div class="admin">
+				<?php if(isset($_SESSION['admin'])): ?>
+					<p>Bonjour <?= $_SESSION['admin'] ?></p>
+					<a href="index.php?page=dashboard">Dashboard</a>
+					<a href="index.php?page=admin&action=deco">Log out</a>
+				<?php endif; ?>
+			</div>
 		</nav>
+		
 	</header>
 	
 	<!-- code principal de la page -->
 	<?php include $template ?>
 	
-	<footer>
+	<footer class="bottom">
 		<div class="contact">
 		</div>
 		<button>Télécharger le PDF</button>
