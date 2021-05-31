@@ -1,0 +1,14 @@
+/***************/
+/***VARIABLES***/
+/***************/
+:root {
+    --head-bg-color: yellow;
+}
+
+/****************/
+/*****HEADER*****/
+/****************/
+
+header {
+    background-color: var(--head-bg-color);
+}
