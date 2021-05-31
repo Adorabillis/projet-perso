@@ -65,7 +65,7 @@ class AuthorController {
 		
 		//mettre les datas en bdd
 		$model = new \Models\Author();
-		$modifyAuthor = $model -> ModifyAuthor($_GET['id'],$prenom, $nom, $id_author);
+		$modifyAuthor = $model -> ModifyAuthor($_GET['id'],$prenom, $nom);
             
 		header('location:index.php?page=gestionAuthor');
 			exit;

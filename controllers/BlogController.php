@@ -87,7 +87,7 @@ class BlogController {
 		
 		//mettre les datas en bdd
 		$model = new \Models\Article();
-		$modifyArticle = $model -> ModifyArticle($_GET['id'], $category, $title, $description, $src, $alt, $author);
+		$modifyArticle = $model -> ModifyArticle($_GET['id'], $categories, $title, $description, $src, $alt, $author);
             
 		header('location:index.php?page=gestionArticle');
 			exit;
