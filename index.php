@@ -39,7 +39,7 @@ else
 			$controller = new Controllers\AdminController();
 			$controller -> display();
 			break;
-			case 'admin':
+		case 'admin':
 				//include 'controllers/TableauDeBordController.php';
 				$controller = new Controllers\AdminController();
 				$controller -> display();
