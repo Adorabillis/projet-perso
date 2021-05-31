@@ -60,9 +60,9 @@ class BlogController {
 		public function displayModify()
 	{
 	    $model = new \Models\Article();
-	    $meal = $model -> getArticleById($_GET['id_article']);
-	    $model = new \Models\Category();
-	    $categories = $model -> getAllCategory();  
+	    $article = $model -> getArticleById($_GET['id']);
+	    $model1 = new \Models\Category();
+	    $categories = $model1 -> getAllCategory();  
             $template = 'views//back-end/modify/modifyArticle.phtml';
             include 'views/layout.phtml';
 	}
@@ -85,7 +85,7 @@ class BlogController {
 		
 		//mettre les datas en bdd
 		$model = new \Models\Article();
-		$modifyArticle = $model -> ModifyArticle($_GET['id_article'], $category, $title, $description, $src, $alt, $author);
+		$modifyArticle = $model -> ModifyArticle($_GET['id'], $category, $title, $description, $src, $alt, $author);
             
 		header('location:index.php?page=gestionArticle');
 			exit;

@@ -44,10 +44,10 @@ class Article extends Database
 	public function getArticleById(int $id):array
 	{
 		return $this -> findOne("
-		SELECT meal.id, meal.name, src, alt, id_category, category.name AS categoryName 
-		FROM meal 
-		INNER JOIN category ON category.id = meal.id_category
-		WHERE meal.id = ?",[$id]);
+		SELECT id_article, titre, src_img, alt_img, id_category, category_name AS categoryName 
+		FROM blog 
+		INNER JOIN category ON category.id_category = blog.id_categorie
+		WHERE id_article = ?",[$id]);
 	}
 
 	public function deleteArticle($id)

@@ -20,10 +20,10 @@
                 <td><?= $article['category_name'] ?></td>
                 <td><?= $article['titre'] ?></td>
                 <td><?= $article['first_name'], $article['last_name'] ?></td>
-                <td><?= $article['src'] ?></td>
-                <td><?= $article['alt'] ?></td>
-                <td><button><a href="index.php?page=modifyArticle&id=<?=$article['id_article']?>"><i class="fas fa-pen-nib"></i></a></a></button></td>
-                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteArticle&id=".$article['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
+                <td><?= $article['src_img'] ?></td>
+                <td><?= $article['alt_img'] ?></td>
+                <td><button><a href="index.php?page=modifyArticle&id=<?=$article['id_article']?>"><i class="fas fa-pen-nib"></i>modif</a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteArticle&id=".$article['id_article'] ?>"><a><i class="fas fa-trash-alt"></i>suppr</a></button></td>
             </tr>
             <?php endforeach; ?>
         </table>

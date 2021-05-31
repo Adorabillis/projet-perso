@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class MealController {
+class CategoryController {
 	
 	use SessionController;
 	
@@ -17,8 +17,8 @@ class MealController {
 		//afficher les Catégories
 		$model = new \Models\Category();
 		$categories = $model -> getAllCategory();
-            $template = 'views/back-end/category.phtml';
-            include 'views/layout.phtml';
+        $template = 'views/back-end/gestionCategory.phtml';
+        include 'views/layout.phtml';
 	}
 		public function delete()
 	{
@@ -44,7 +44,7 @@ class MealController {
 		$model = new \Models\Category();
 		$model -> AddCategory($nom);
             
-		header('location:index.php?page=category');
+		header('location:index.php?page=gestionCategory');
 			exit;
 	}
 		public function displayModify()
@@ -67,7 +67,7 @@ class MealController {
 		$model = new \Models\Category();
 		$modifyMeal = $model -> ModifyCategory($_GET['id'], $nom, $id_category);
             
-		header('location:index.php?page=category');
+		header('location:index.php?page=gestionCategory');
 			exit;
 	}
 	

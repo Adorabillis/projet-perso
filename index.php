@@ -72,8 +72,38 @@ else
 				$controller -> displayModify();	
 			}
 			break;
-		case 'deleteMeal':
-			$controller = new Controllers\MealController();
+		case 'deleteArticle':
+			$controller = new Controllers\BlogController();
+			$controller -> delete();
+			break;
+		case 'gestionCategory':
+			$controller = new Controllers\CategoryController();
+			$controller -> display();
+			break;
+		case 'addCategory':
+			$controller = new Controllers\CategoryController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> AddSubmit();
+			}
+			else {
+				$controller -> displayAdd();	
+			}
+			break;
+		case 'modifyCategory':
+			$controller = new Controllers\CategoryController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> ModifySubmit();
+			}
+			else {
+				$controller -> displayModify();	
+			}
+			break;
+		case 'deleteCategory':
+			$controller = new Controllers\CategoryController();
 			$controller -> delete();
 			break;
 		case 'connexion':

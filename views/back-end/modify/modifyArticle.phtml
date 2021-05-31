@@ -2,7 +2,7 @@
 
 <h3>Modifier un article</h3>
     
-    <form method="post"> 
+    <form method="post" enctype="multipart/form-data"> 
   
 		<p>
 		    <label for='category'>Catégorie</label>
@@ -25,6 +25,17 @@
 		<p>	
 			<label for="texte">Contenu de l'article</label> 
 			<textarea name="texte" id="texte"><?= $article['content'] ?></textarea>
+		</p>
+		<img src="<?= $article['src_img'] ?>">
+		<p>
+			<label for="img">Image</label>
+			<input type="file" name="img" id="img"/>
+			<input type="hidden" name="imgBdd" id="imgBdd" value="<?= $article['src_img'] ?>"/>
+			
+		</p>
+		<p>	
+			<label for="alt">Alt</label> 
+			<input type="alt" name="alt" id="alt" value="<?= htmlspecialchars($article['alt_img']) ?>"/>
 		</p>
 
 			<button type="submit">Enregistrer</button>
