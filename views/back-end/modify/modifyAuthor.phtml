@@ -1,0 +1,20 @@
+<main>
+
+<h3>Modifier un auteur</h3>
+    
+    <form method="post"> 
+  
+		<p>
+			<label for="firstname">Prénom</label>
+			<input type="text" name="firstname" id="firstname" value="<?= $author['first_name'] ?>"/>
+		</p>
+		<p>
+			<label for="lastname">Nom</label>
+			<input type="text" name="lastname" id="lastname" value="<?= $author['last_name'] ?>"/>
+		</p>
+		
+			<button type="submit">Enregistrer</button>
+			 
+	</form>
+	
+</main>

@@ -2,43 +2,37 @@
 
 namespace Models;
 
-class Article extends Database
+class Author extends Database
 {
 
-	function getNewArticles()
+	public function getAllAuthors():array
 	{
-		return $this -> findAll(
-			'SELECT id_article, titre, SUBSTR(content,1,100) AS content100, category_name, first_name, last_name, DATE_FORMAT(date, "%W %e %M %Y") AS newDate FROM blog
-			INNER JOIN category ON category.id_category = blog.id_categorie
-			INNER JOIN author ON author.id_author = blog.id_auteur
-			ORDER BY date DESC LIMIT 3'
-			);
+		return $this -> findAll("SELECT id_author, first_name, last_name FROM author");	
 	}
 	
-	public function getAllArticles():array
+		public function AddAuthor($prenom, $nom)
 	{
-		return $this -> findAll(
-			'SELECT id_article, titre, content, category_name, first_name, last_name, DATE_FORMAT(date, "%W %e %M %Y") AS newDate, src_img, alt_img FROM blog
-			INNER JOIN category ON category.id_category = blog.id_categorie
-			INNER JOIN author ON author.id_author = blog.id_auteur
-			ORDER BY date DESC'
-			);
+		//requête sql qui permet l'ajout de la catégorie
+		$this -> query("INSERT INTO author (first_name, last_name) VALUES (?,?)",[$prenom, $nom]);
 	}
 	
-	public function addArticle($category, $title, $content, $src, $alt, $author)
+	public function ModifyAuthor($prenom, $nom, $id)
 	{
-		$this -> query(
-			"INSERT INTO blog (id_categorie, titre, content, src_img, alt_img, id_auteur, date) VALUES (?,?,?,?,?,?,NOW()",
-			[$category, $title, $content, $src, $alt, $author]
-			);
+		//requêtes sql qui permet la modification d'une catégorie
+		$this -> query("UPDATE author 
+		SET first_name = ?, last_name = ?
+		WHERE id_author = ?",[$prenom, $nom, $id]);
 	}
-
-	public function getArticleById(int $id):array
+	
+	public function findAuthorById($id):?array
 	{
-		return $this -> findOne("
-		SELECT meal.id, meal.name, src, alt, id_category, category.name AS categoryName 
-		FROM meal 
-		INNER JOIN category ON category.id = meal.id_category
-		WHERE meal.id = ?",[$id]);
+		return $this -> findOne("SELECT id_author, first_name, last_name
+		FROM author WHERE id_author = ?",[$id]);
+	}
+	
+	public function deleteAuthor($id)
+	{
+		//requête sql qui permet la suppression de la catégorie
+		$this -> query("DELETE FROM author WHERE id_author = ? ",[$id]);
 	}
 }

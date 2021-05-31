@@ -26,7 +26,7 @@ class Category extends Database
 	
 	public function findCategoryById($id):?array
 	{
-		return $this -> findOne("SELECT id, category_name
+		return $this -> findOne("SELECT id_category, category_name
 		FROM category WHERE id_category = ?",[$id]);
 	}
 	

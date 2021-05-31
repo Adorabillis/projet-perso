@@ -106,6 +106,36 @@ else
 			$controller = new Controllers\CategoryController();
 			$controller -> delete();
 			break;
+		case 'gestionAuthor':
+			$controller = new Controllers\AuthorController();
+			$controller -> display();
+			break;
+		case 'addAuthor':
+			$controller = new Controllers\AuthorController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> AddSubmit();
+			}
+			else {
+				$controller -> displayAdd();	
+			}
+			break;
+		case 'modifyAuthor':
+			$controller = new Controllers\AuthorController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> ModifySubmit();
+			}
+			else {
+				$controller -> displayModify();	
+			}
+			break;
+		case 'deleteAuthor':
+			$controller = new Controllers\AuthorController();
+			$controller -> delete();
+			break;
 		case 'connexion':
 			//include 'controllers/AdminController.php';
 			$controller = new Controllers\ConnexionController();

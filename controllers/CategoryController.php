@@ -30,8 +30,8 @@ class CategoryController {
 	{
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();
-            $template = 'views/back-end/add/addCategory.phtml';
-            include 'views/layout.phtml';
+        $template = 'views/back-end/add/addCategory.phtml';
+        include 'views/layout.phtml';
 	}
 	
 	public function AddSubmit()
