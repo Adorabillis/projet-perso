@@ -32,7 +32,7 @@ class BlogController {
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();
 	    $model1 = new \Models\Author();
-	    $categories = $model1 -> getAllAuthor();
+	    $categories = $model1 -> getAllAuthors();
         $template = 'views/back-end/add/addArticle.phtml';
         include 'views/layout.phtml';
 	}
@@ -40,7 +40,7 @@ class BlogController {
 	public function AddSubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
-		$category = $_POST['category'];
+		$categorie = $_POST['category'];
 		$author = $_POST['author'];
 		$title = $_POST['title'];
 		$description = $_POST['texte'];
@@ -52,7 +52,7 @@ class BlogController {
 		
 		//mettre les datas en bdd
 		$model = new \Models\Article();
-		$model -> AddArticle($category, $title, $description, $src, $alt, $author);
+		$model -> AddArticle($categorie, $title, $description, $src, $alt, $author);
             
 		header('location:index.php?page=gestionArticle');
 			exit;
@@ -61,16 +61,18 @@ class BlogController {
 	{
 	    $model = new \Models\Article();
 	    $article = $model -> getArticleById($_GET['id']);
-	    $model1 = new \Models\Category();
-	    $categories = $model1 -> getAllCategory();  
-            $template = 'views//back-end/modify/modifyArticle.phtml';
-            include 'views/layout.phtml';
+	    $model = new \Models\Category();
+	    $categories = $model -> getAllCategory();  
+	    $model = new \Models\Author();
+	    $authors = $model -> getAllAuthors(); 
+        $template = 'views//back-end/modify/modifyArticle.phtml';
+        include 'views/layout.phtml';
 	}
 	
 	public function ModifySubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
-		$category = $_POST['category'];
+		$categories = $_POST['category'];
 		$title = $_POST['titre'];
 		$description = $_POST['texte'];
 		if (empty($_FILES['src']['name'])) {

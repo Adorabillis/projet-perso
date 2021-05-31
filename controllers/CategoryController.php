@@ -53,7 +53,7 @@ class CategoryController {
 	    $category = $model -> findCategoryById($_GET['id']);
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();  
-        $template = 'views/modifyCategory.phtml';
+        $template = 'views/back-end/modify/modifyCategory.phtml';
         include 'views/layout.phtml';
 	}
 	

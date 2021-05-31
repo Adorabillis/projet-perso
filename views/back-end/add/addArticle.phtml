@@ -17,7 +17,7 @@
             <select name="author" id="author">
 			    <option value="">--Please choose an option--</option>
 			    <?php foreach($authors as $author): ?>
-                <option value="<?= $author['id_author'] ?>"><?= htmlspecialchars($author['first_name'], $author['last_name']) ?></option>
+                <option value="<?= $author['id_author'] ?>"><?= htmlspecialchars($author['first_name']) ?> <?= htmlspecialchars($author['last_name']) ?></option>
                 <?php endforeach; ?>
             </select>
         </p>

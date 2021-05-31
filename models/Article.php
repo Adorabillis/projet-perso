@@ -25,20 +25,20 @@ class Article extends Database
 			);
 	}
 	
-	public function addArticle($category, $title, $description, $src, $alt, $author)
+	public function addArticle($categorie, $title, $description, $src, $alt, $author)
 	{
 		$this -> query(
 			"INSERT INTO blog (id_categorie, titre, content, src_img, alt_img, id_auteur, date) VALUES (?,?,?,?,?,?,NOW()",
-			[$category, $title, $description, $src, $alt, $author]
+			[$categorie, $title, $description, $src, $alt, $author]
 			);
 	}
 
-	public function ModifyArticle($category, $title, $description, $src, $alt, $author, $id )
+	public function ModifyArticle($categorie, $title, $description, $src, $alt, $author, $id )
 	{
 		//requêtes sql qui permet la modification d'une catégorie
 		$this -> query("UPDATE blog 
-		SET id_category = ?, titre = ?, content = ?, src_img = ?, alt_img = ?, id_auteur = ?
-		WHERE id_article = ?",[$category, $title, $description, $src, $alt, $author, $id]);
+		SET id_categorie = ?, titre = ?, content = ?, src_img = ?, alt_img = ?, id_auteur = ?
+		WHERE id_article = ?",[$categorie, $title, $description, $src, $alt, $author, $id]);
 	}
 
 	public function getArticleById(int $id):array

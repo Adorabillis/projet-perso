@@ -39,7 +39,6 @@ class AuthorController {
 		//préparer les données pour les mettre dans la base de données
 		$prenom = $_POST['firstname'];
 		$nom = $_POST['lastname'];
-		$id = $_POST['author'];
 
 		//mettre les datas en bdd
 		$model = new \Models\Author();
@@ -54,7 +53,7 @@ class AuthorController {
 	    $author = $model -> findAuthorById($_GET['id']);
 	    $model = new \Models\Author();
 	    $authors = $model -> getAllAuthors();  
-        $template = 'views/modifyAuthor.phtml';
+        $template = 'views/back-end/modify/modifyAuthor.phtml';
         include 'views/layout.phtml';
 	}
 	
@@ -63,7 +62,6 @@ class AuthorController {
 		//préparer les données pour les mettre dans la base de données
 		$prenom = $_POST['firstname'];
 		$nom = $_POST['lastname'];
-		$id_author = $_POST['author'];
 		
 		//mettre les datas en bdd
 		$model = new \Models\Author();
