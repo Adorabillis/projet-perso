@@ -1,0 +1,28 @@
+<main>
+	
+	<h2 class="center">Tous les articles</h2>
+
+	<section>
+		
+		<?php foreach($archives as $archive): ?>
+			
+			<article>
+				<div>
+					<h3><?= htmlspecialchars($archive['titre']) ?></h3>
+					<p>Dans la catégorie : <span><?= htmlspecialchars($archive['category_name']) ?></span></p>
+				</div>
+				<div>
+					<p><?=$archive['content100']?>...</p>
+					<button><a href="index.php?page=article<?= $archive['id_article'] ?>">Voir plus</a></button>
+				</div>
+				
+				<footer>
+					<p>Rédigé par <strong><?=htmlspecialchars($archive['first_name'])?> <?=htmlspecialchars($archive['last_name'])?></strong> le <?= $archive['newDate']?> </p>
+				</footer>
+			</article>
+		
+		<?php endforeach; ?>
+	
+	</section>
+
+</main>

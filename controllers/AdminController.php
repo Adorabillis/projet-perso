@@ -25,8 +25,8 @@ class AdminController
 	public function display()
 	{
 		//afficher le formulaire de connexion
-            $template = 'views/admin.phtml';
-            include 'views/layout_front.phtml';
+            $template = 'views/back-end/admin.phtml';
+            include 'views/layout.phtml';
 	}
 	public function disconnect()
 	{

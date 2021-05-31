@@ -31,26 +31,27 @@ else
 			$controller -> display();
 			break;
 		case 'merch':
-			$controller = new Controllers\ContactController();
+			$controller = new Controllers\MerchController();
 			$controller -> display();
 			break;
 		case 'about':
-			//include 'controllers/AdminController.php';
-			$controller = new Controllers\AdminController();
+			$controller = new Controllers\AboutController();
 			$controller -> display();
 			break;
 		case 'admin':
-				//include 'controllers/TableauDeBordController.php';
 				$controller = new Controllers\AdminController();
 				$controller -> display();
 				break;
 		case 'dashboard':
-			//include 'controllers/TableauDeBordController.php';
 			$controller = new Controllers\DashboardController();
 			$controller -> display();
 			break;
-		case 'createMeal':
-			$controller = new Controllers\MealController();
+		case 'gestionArticle':
+			$controller = new Controllers\BlogController();
+			$controller -> display();
+			break;
+		case 'addArticle':
+			$controller = new Controllers\BlogController();
 			//si le formulaire a été soumis
 			if(!empty($_POST))
 			{
@@ -60,8 +61,8 @@ else
 				$controller -> displayAdd();	
 			}
 			break;
-		case 'modifyMeal':
-			$controller = new Controllers\MealController();
+		case 'modifyArticle':
+			$controller = new Controllers\BlogController();
 			//si le formulaire a été soumis
 			if(!empty($_POST))
 			{
@@ -74,10 +75,6 @@ else
 		case 'deleteMeal':
 			$controller = new Controllers\MealController();
 			$controller -> delete();
-			break;
-		case 'slider':
-			$controller = new Controllers\SliderController();
-			$controller -> display();
 			break;
 		case 'connexion':
 			//include 'controllers/AdminController.php';

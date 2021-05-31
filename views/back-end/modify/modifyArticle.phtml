@@ -1,0 +1,34 @@
+<main class="create">
+
+<h3>Modifier un article</h3>
+    
+    <form method="post"> 
+  
+		<p>
+		    <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id_category'] ?>" <?= ($categorie['id_category']==$article['id_category'])?"selected":""  ?>><?= htmlspecialchars($categorie['category_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+		    <label for='author'>Auteur</label>
+		    <select name="author" id="author">
+			    <?php foreach($authors as $author): ?>
+                <option value="<?= $author['id_author'] ?>" <?= ($author['id_author']==$article['id_auteur'])?"selected":""  ?>><?= htmlspecialchars($author['first_name']) ?> <?= htmlspecialchars($author['last_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+		</p>
+		<p>
+			<label for="titre">Titre de l'article</label>
+			<input type="text" name="titre" id="titre" value="<?= $article['titre'] ?>"/>
+		</p>
+		<p>	
+			<label for="texte">Texte de l'article</label> 
+			<textarea name="texte" id="texte"><?= $article['content'] ?></textarea>
+		</p>
+
+			<button type="submit">Enregistrer</button>
+			 
+	</form>
+	
+</main>

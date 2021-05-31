@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Projet Perso</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 			<?php endif; ?>
 			<a href="#">Log in</a>
 			<?php if(isset($_SESSION['admin'])): ?>
-				<a href="index.php?page=admin">Dashboard</a>
+				<a href="index.php?page=dashboard">Dashboard</a>
 				<a href="index.php?page=admin&action=deco">Log out</a>
 				Bonjour <?= $_SESSION['admin'] ?>
 			<?php endif; ?>
