@@ -9,7 +9,7 @@ class DashboardController
 	
 		public function __construct()
 	{
-		$this -> redirectIfNotAdmin();
+	//	$this -> redirectIfNotAdmin();
 	}
 	
 	public function display()

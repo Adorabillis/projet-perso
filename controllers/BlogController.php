@@ -32,7 +32,7 @@ class BlogController {
 	    $model = new \Models\Category();
 	    $categories = $model -> getAllCategory();
 	    $model1 = new \Models\Author();
-	    $categories = $model1 -> getAllAuthors();
+	    $authors = $model1 -> getAllAuthors();
         $template = 'views/back-end/add/addArticle.phtml';
         include 'views/layout.phtml';
 	}
@@ -87,7 +87,7 @@ class BlogController {
 		
 		//mettre les datas en bdd
 		$model = new \Models\Article();
-		$modifyArticle = $model -> ModifyArticle($_GET['id'], $categories, $title, $description, $src, $alt, $author);
+		$modifyArticle = $model -> ModifyArticle($categories, $title, $description, $src, $alt, $author, $_GET['id']);
             
 		header('location:index.php?page=gestionArticle');
 			exit;

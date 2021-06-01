@@ -60,11 +60,11 @@ class CategoryController {
 	{
 		//préparer les données pour les mettre dans la base de données
 		$name = $_POST['name'];
-		$id = $_GET['id_category'];
+		$id = $_GET['id'];
 		
 		//mettre les datas en bdd
 		$model = new \Models\Category();
-		$modifyCategory = $model -> ModifyCategory($_GET['id_category'], $nom);
+		$modifyCategory = $model -> ModifyCategory($name, $id);
             
 		header('location:index.php?page=gestionCategory');
 			exit;
