@@ -9,12 +9,12 @@
 /****GENERAL****/
 /***************/
 
-main {
+/*main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+}*/
 a {
     text-decoration: none;
 }
@@ -113,10 +113,10 @@ footer {
 /*   quand mon site est affiché sur une tablette et que je pars  d'un PC first (max-width: 1024px) */
 @media screen and (min-width: 768px) {
 
-main {
+/*main {
 	width: 90%;
 	margin: auto;
-}
+}*/
 
 .blog {
     flex-direction: row;
