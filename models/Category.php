@@ -16,12 +16,12 @@ class Category extends Database
 		$this -> query("INSERT INTO category(category_name) VALUES (?)",[$nom]);
 	}
 	
-	public function ModifyCategory($nom, $id)
+	public function ModifyCategory($name, $id)
 	{
 		//requêtes sql qui permet la modification d'une catégorie
 		$this -> query("UPDATE category 
 		SET category_name = ?
-		WHERE id_category = ?",[$nom, $id]);
+		WHERE id_category = ?",[$name, $id]);
 	}
 	
 	public function findCategoryById($id):?array

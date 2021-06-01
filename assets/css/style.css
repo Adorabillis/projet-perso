@@ -2,13 +2,162 @@
 /***VARIABLES***/
 /***************/
 :root {
+<<<<<<< HEAD
     --head-bg-color: yellow;
+=======
+  -head-bg-color: yellow;
+}
+
+/***************/
+/****GENERAL****/
+/***************/
+
+/*main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}*/
+a {
+    text-decoration: none;
+}
+input, 
+textarea {
+	border: 1px solid #4c4343;
+	border-radius: 5px;
+	padding: 1rem;
+	margin-bottom: 2rem;
+}
+textarea {
+	width: 50%;
+	height: 13em;
+>>>>>>> 01c9ee22c41105c7a54c9074481342d88752bfb6
 }
 
 /****************/
 /*****HEADER*****/
 /****************/
+<<<<<<< HEAD
 
 header {
     background-color: var(--head-bg-color);
+=======
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hotpink;
+    padding: 1em;
+}
+
+.home {
+    padding: 0.4em;
+    background-color: teal;
+    margin-right: 1em;
+}
+
+.admin {
+    display:flex;
+    flex-direction: column;
+    background-color: cyan;
+}
+
+.logo {
+    background-color: lime;
+}
+
+
+/****************/
+/*****BANNER*****/
+/****************/
+
+.banner {
+    width: 100%;
+    background-color: mediumorchid;
+    display: flex;
+    align-items: center;
+}
+
+/***************/
+/*****ABOUT*****/
+/***************/
+
+.about {
+    background-color: orchid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/****************/
+/******BLOG******/
+/****************/
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    background-color: lavender;
+}
+
+article {
+    width: 90%;
+    background-color: purple;
+    flex-direction: column;
+  
+    
+    
+}
+
+/****************/
+/*****FOOTER*****/
+/****************/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    padding: 1em;
+}
+
+
+/*   médiaquerries   */
+/*   quand mon site est affiché sur une tablette et que je pars  d'un mobile first (min-width: 768px) */
+/*   quand mon site est affiché sur une tablette et que je pars  d'un PC first (max-width: 1024px) */
+@media screen and (min-width: 768px) {
+
+/*main {
+	width: 90%;
+	margin: auto;
+}*/
+
+.blog {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article {
+    width: 40%;
+}
+    
+}
+
+/*   quand mon site est affiché sur une tablette et que je pars  d'un mobile first (min-width: 768px) */
+/*   quand mon site est affiché sur une smartphone et que je pars  d'un PC first (max-width: 768px) */
+
+@media screen and (min-width: 1024px) {
+    
+
+article {
+    width: 20%;
+}
+      
+>>>>>>> 01c9ee22c41105c7a54c9074481342d88752bfb6
 }

@@ -1,6 +1,6 @@
 <main>
 
-    <section class="title">
+    <section class="banner">
         <h1>Titre de l'événement</h1>
     </section>
 
@@ -14,7 +14,7 @@
     <section class="blog">
        <?php foreach($articles as $article): ?>
 			
-			<article class="accueil">
+			<article>
 				<div>
 					<h3><?= htmlspecialchars($article['titre']) ?></h3>
 					<p>Dans la catégorie : <span><?= htmlspecialchars($article['category_name']) ?></span></p>
@@ -24,9 +24,9 @@
 					<button><a href="index.php?page=article&id_article=<?= $article['id_article'] ?>">Voir plus</a></button>
 				</div>
 				
-				<footer>
+				<div>
 					<p>Rédigé par <strong><?=htmlspecialchars($article['first_name'])?> <?=htmlspecialchars($article['last_name'])?></strong> le <?= $article['newDate']?> </p>
-				</footer>
+				</div>
 			</article>
 		
 		<?php endforeach; ?>

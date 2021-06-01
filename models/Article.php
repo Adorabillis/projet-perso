@@ -38,15 +38,17 @@ class Article extends Database
 		//requêtes sql qui permet la modification d'une catégorie
 		$this -> query("UPDATE blog 
 		SET id_categorie = ?, titre = ?, content = ?, src_img = ?, alt_img = ?, id_auteur = ?
+		INNER JOIN author ON author.id_author = blog.id_auteur
 		WHERE id_article = ?",[$categorie, $title, $description, $src, $alt, $author, $id]);
 	}
 
 	public function getArticleById(int $id):array
 	{
 		return $this -> findOne("
-		SELECT id_article, titre, src_img, alt_img, id_category, category_name AS categoryName 
+		SELECT id_article, titre, src_img, alt_img, id_category, category_name AS categoryName, id_author, first_name, last_name
 		FROM blog 
 		INNER JOIN category ON category.id_category = blog.id_categorie
+		INNER JOIN author ON author.id_author = blog.id_auteur
 		WHERE id_article = ?",[$id]);
 	}
 
