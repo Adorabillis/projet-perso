@@ -18,6 +18,17 @@
 a {
     text-decoration: none;
 }
+input, 
+textarea {
+	border: 1px solid #4c4343;
+	border-radius: 5px;
+	padding: 1rem;
+	margin-bottom: 2rem;
+}
+textarea {
+	width: 50%;
+	height: 13em;
+}
 
 /****************/
 /*****HEADER*****/

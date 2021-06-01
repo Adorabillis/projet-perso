@@ -59,17 +59,14 @@ class CategoryController {
 	public function ModifySubmit()
 	{
 		//préparer les données pour les mettre dans la base de données
-		$nom = $_POST['name'];
-		//$id_category = $_POST['category'];
+		$name = $_POST['name'];
+		$id = $_GET['id_category'];
 		
 		//mettre les datas en bdd
 		$model = new \Models\Category();
-		$modifyCategory = $model -> ModifyCategory($_GET['id'], $nom);
+		$modifyCategory = $model -> ModifyCategory($_GET['id_category'], $nom);
             
 		header('location:index.php?page=gestionCategory');
 			exit;
 	}
-	
-	
-
 }

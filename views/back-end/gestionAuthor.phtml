@@ -15,10 +15,10 @@
             </tr>
             <?php foreach($authors as $author): ?>
             <tr>
-                <td><?= $author['id_auteur'] ?></td>
+                <td><?= $author['id_author'] ?></td>
                 <td><?= $author['first_name'] ?></td>
                 <td><?= $author['last_name'] ?></td>
-                <td><button><a href="index.php?page=modifyAuthor&id=<?=$author['id_auteur']?>"><i class="fas fa-pen-nib"></i></a></button></td>
+                <td><button><a href="index.php?page=modifyAuthor&id=<?=$author['id_author']?>"><i class="fas fa-pen-nib"></i></a></button></td>
                 <td><button class="confirmButton" data-url="<?= "index.php?page=deleteAuthor&id=".$author['id_author'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
             </tr>
             <?php endforeach; ?>
