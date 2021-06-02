@@ -13,20 +13,18 @@ class NewUserController {
         if(!empty($_POST))
 		{
 		    $this -> submit();
-		
 	    }
 	    if(isset($_GET['action']) && $_GET['action'] == 'deco')
 		{
 			$this -> disconnect();
-		}
-		
+		}	
     }
     
 	public function display()
 	{
 		//afficher le formulaire de connexion
-            $template = 'views/newUser.phtml';
-            include 'views/layout_front.phtml';
+        $template = 'views/newUser.phtml';
+        include 'views/layout.phtml';
 	}
 	public function disconnect()
 	{
@@ -58,45 +56,42 @@ class NewUserController {
 		}
 	}
 	
- 
-	
 	public function IsConnected() 
 	{
-	    	include 'models/User.php';
-			
-			$email = $_POST['email'];
-			$pw = $_POST['pw'];
-			
-			//comparer avec ce que j'ai en bdd
-			$model = new \Models\User();
-			//aller chercher les infos de l'utilisateur/iden qui essaye de se connecter
-			$user = $model -> getUserByEmail($email);
-			
-			//si l'identifiant existe dans la base alors âdmin contiendra les infos de cet admin
-			//sinon $admin contiendra false
-			
-			if(!$user)
+	    include 'models/User.php';
+		
+		$email = $_POST['email'];
+		$pw = $_POST['pw'];
+		
+		//comparer avec ce que j'ai en bdd
+		$model = new \Models\User();
+		//aller chercher les infos de l'utilisateuriden qui essaye de se connecter
+		$user = $model -> getUserByEmail($email);
+		
+		//si l'identifiant existe dans la base alorsâdmin contiendra les infos de cet admin
+		//sinon $admin contiendra false
+		
+		if(!$user)
+		{
+			$this -> message1 = "Mauvais identifiant";
+		}
+		else
+		{
+			//vérifier le mot de passe
+			if(password_verify($pw,$user['password']))
 			{
-				$this -> message1 = "Mauvais identifiant";
+				//le mot de passe correcpond
+				//connecter l'utilisateur
+				$_SESSION['user'] = $user['firstname']' '.$user['lastname'];
+				//redirige vers la page tableau debord du backoffice
+				header('location:index.phppage=accueil');
+				exit;
 			}
 			else
 			{
-				//vérifier le mot de passe
-				if(password_verify($pw,$user['password']))
-				{
-					//le mot de passe correcpond
-					//connecter l'utilisateur
-					$_SESSION['user'] = $user['firstname'].' '.$user['lastname'];
-					//redirige vers la page tableau de bord du backoffice
-					header('location:index.php?page=accueil');
-					exit;
-				}
-				else
-				{
-					$this -> message2 = "Mauvais mot de passe";
-				}
+				$this -> message2 = "Mauvais mot depasse";
 			}
-	}
-	
+		}
+	}	
 }
 
