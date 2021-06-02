@@ -26,7 +26,7 @@ class ConnexionController
 	{
 		//afficher le formulaire de connexion
             $template = 'views/connexion.phtml';
-            include 'views/layout_front.phtml';
+            include 'views/layout.phtml';
 	}
 
 	public function disconnect()
@@ -65,7 +65,7 @@ class ConnexionController
 				$_SESSION['user'] = $user['firstname'].' '.$user['lastname'];
 				$_SESSION['idUser'] = $user['id'];
 				//redirige vers la page tableau de bord du backoffice
-				header('location:index.php?page=accueil');
+				header('location:index.php?page=home');
 				exit;
 			}
 			else
