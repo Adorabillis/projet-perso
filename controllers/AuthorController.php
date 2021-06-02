@@ -8,7 +8,7 @@ class AuthorController {
 	
 	public function __construct()
 	{
-		$this -> redirectIfNotAdmin();
+		$this -> redirectIfNotAdmin(); 
 		//si le formulaire a été soumis
 	}
 
