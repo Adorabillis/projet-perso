@@ -2,25 +2,24 @@
 /***VARIABLES***/
 /***************/
 :root {
-<<<<<<< HEAD
     --head-bg-color: yellow;
-=======
-  -head-bg-color: yellow;
 }
 
 /***************/
 /****GENERAL****/
 /***************/
 
-/*main {
+main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}*/
+}
+
 a {
     text-decoration: none;
 }
+
 input, 
 textarea {
 	border: 1px solid #4c4343;
@@ -31,17 +30,13 @@ textarea {
 textarea {
 	width: 50%;
 	height: 13em;
->>>>>>> 01c9ee22c41105c7a54c9074481342d88752bfb6
+
 }
 
 /****************/
 /*****HEADER*****/
 /****************/
-<<<<<<< HEAD
 
-header {
-    background-color: var(--head-bg-color);
-=======
 header {
     display: flex;
     justify-content: space-between;
@@ -111,9 +106,6 @@ article {
     width: 90%;
     background-color: purple;
     flex-direction: column;
-  
-    
-    
 }
 
 /****************/
@@ -133,10 +125,10 @@ footer {
 /*   quand mon site est affiché sur une tablette et que je pars  d'un PC first (max-width: 1024px) */
 @media screen and (min-width: 768px) {
 
-/*main {
+main {
 	width: 90%;
 	margin: auto;
-}*/
+}
 
 .blog {
     flex-direction: row;
@@ -159,5 +151,4 @@ article {
     width: 20%;
 }
       
->>>>>>> 01c9ee22c41105c7a54c9074481342d88752bfb6
 }

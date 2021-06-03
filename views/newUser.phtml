@@ -1,0 +1,55 @@
+<main>
+	<form method="post">
+		<fieldset>
+			<legend>Identité</legend>
+			<p>
+				<label for='firstName'>Prénom</label>
+				<input type="text" name="firstName" id="firstName" value="<?= (isset($_POST['firstName']))? $_POST['firstName']:"" ?>">
+			</p>
+			<p>
+				<label for='lastName'>Nom</label>
+				<input type="text" name="lastName" id="lastName" value="<?= (isset($_POST['lastName']))? $_POST['lastName']:"" ?>">
+			</p>
+			<p>
+				<label for='phone'>Teléphone</label>
+				<input type="tel" name="phone" id="phone" value="<?= (isset($_POST['phone']))? $_POST['phone']:"" ?>">
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>Adresse</legend>
+				<p>
+					<label for='address1'>Adresse ligne 1</label>
+					<input type="text" name="address1" id="address1" value="<?= (isset($_POST['address1']))? $_POST['address1']:"" ?>">
+				</p>
+				<p>
+					<label for='address2'>Adresse ligne 2</label>
+					<input type="text" name="address2" id="address2" value="<?= (isset($_POST['address2']))? $_POST['address2']:"" ?>">
+				</p>
+				<p>
+					<label for='codepostal'>Code postal</label>
+					<input type="text" name="codepostal" id="codepostal" value="<?= (isset($_POST['codepostal']))? $_POST['codepostal']:"" ?>">
+				</p>
+				<p>
+					<label for='city'>Ville</label>
+					<input type="text" name="city" id="city" value="<?= (isset($_POST['city']))? $_POST['city']:"" ?>">
+				</p>
+				<p>
+					<label for='country'>Pays</label>
+					<input type="text" name="country" id="country" value="<?= (isset($_POST['country']))? $_POST['country']:"" ?>" >
+				</p>
+		</fieldset>
+		<fieldset>
+			<legend>Compte</legend>
+				<p>
+					<label for='email'>Email</label>
+					<input type="email" name="email" id="email">
+						<p><?= $this -> message1 ?></p>
+				</p>
+				<p>
+					<label for='pw'>Mot de passe</label>
+					<input type="password" name="pw" id="pw">
+				</p>
+		</fieldset>
+		<button>Créer le compte</button>
+	</form>
+</main>
