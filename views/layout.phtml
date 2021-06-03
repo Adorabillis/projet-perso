@@ -25,7 +25,15 @@
 				<a href="#">Jeu</a>
 				<a href="#">Merch</a>
 				<a href="#">About</a>
-				<a href="connexion">Connexion</a>
+			</div>
+			<div class="user">
+				<?php if(isset($_SESSION['user'])): ?>
+					<p>Bonjour <?= $_SESSION['user'] ?></p>
+					<a href="#">Mon compte</a>
+					<a href="index.php?page=connexion&action=deco">Log out</a>
+				<?php else: ?>
+            		<a href="connexion">Log in</a>
+				<?php endif; ?>
 			</div>
 			<div class="admin">
 				<?php if(isset($_SESSION['admin'])): ?>

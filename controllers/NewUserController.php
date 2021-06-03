@@ -92,7 +92,7 @@ class NewUserController {
 					//connecter l'utilisateur
 					$_SESSION['user'] = $user['firstname'].' '.$user['lastname'];
 					//redirige vers la page tableau de bord du backoffice
-					header('location:index.php?page=accueil');
+					header('location:index.php?page=home');
 					exit;
 				}
 				else
