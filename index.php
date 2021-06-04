@@ -26,13 +26,17 @@ else
 			$controller = new Controllers\AccueilController();
 			$controller -> display();
 			break;
+		case 'article':
+			$controller = new Controllers\BlogController();
+			$controller -> displayArticle();
+			break;
 		case 'jeu':
 			$controller = new Controllers\GameController();
 			$controller -> display();
 			break;
-		case 'merch':
-			$controller = new Controllers\MerchController();
-			$controller -> display();
+		case 'shop':
+			$controller = new Controllers\ProductController();
+			$controller -> displayAllProducts();
 			break;
 		case 'about':
 			$controller = new Controllers\AboutController();
