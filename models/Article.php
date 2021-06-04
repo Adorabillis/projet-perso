@@ -11,7 +11,7 @@ class Article extends Database
 			'SELECT id_article, titre, SUBSTR(content,1,100) AS content100, category_name, first_name, last_name, DATE_FORMAT(date, "%W %e %M %Y") AS newDate FROM blog
 			INNER JOIN category ON category.id_category = blog.id_categorie
 			INNER JOIN author ON author.id_author = blog.id_auteur
-			ORDER BY date DESC LIMIT 3'
+			ORDER BY date DESC LIMIT 4'
 			);
 	}
 	

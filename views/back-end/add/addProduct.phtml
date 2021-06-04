@@ -1,0 +1,39 @@
+	<h1>Ajout d'un produit</h1>
+	<!-- si pas d'attribut action, par défaut, la soumission du formulaire fait un rechargement de la même page-->
+	<form method="post" enctype="multipart/form-data">
+		<p>
+			<label for='productname'>Nom du produit</label>
+			<input type="text" name="productname" id="productname">
+		</p>
+		<p>
+			<label for='texte'>Description</label>
+			<input type="textarea" name="texte" id="texte">
+		</p>
+		<p>
+			<label for='price'>Prix</label>
+			<input type="currency" name="price" id="price">
+		</p>
+		<p>
+		    <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <option value="">--Please choose an option--</option>
+			    <?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id_category'] ?>"><?= htmlspecialchars($categorie['category_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+		<p>
+			<label for='stock'>Quantité</label>
+			<input type="number" name="stock" id="stock">
+		</p>
+		<p>
+			<label for="src">Image</label>
+			<input type="file" name="src" id="src"/>
+		</p>
+		<p>	
+			<label for="alt">Alt</label>
+			<input type="text" name="alt" id="alt"/>
+		</p>
+		
+		<button type="submit">Ajouter</button>
+	</form>

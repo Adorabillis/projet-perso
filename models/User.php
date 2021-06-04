@@ -21,11 +21,11 @@ class User extends Database
 		);
 	}
 
-	public function getUserByEmail($email):?array
+	public function getUserByEmail($email)
 	{
 		//requête sql qui permet de trouver un utilisateur particulier
 		return $this -> findOne(
-			"SELECT id, email, password, first_name, last_name, phone, adress_line1, adress_line2, postal_code, city, country FROM user
+			"SELECT id_user, email, password, first_name, last_name, phone, adress_line1, adress_line2, postal_code, city, country FROM user
 			WHERE email = ?",
 			[$email]
 		);

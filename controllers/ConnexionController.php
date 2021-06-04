@@ -48,7 +48,6 @@ class ConnexionController
 		$model = new \Models\User();
 		//aller chercher les infos de l'utilisateur/iden qui essaye de se connecter
 		$user = $model -> getUserByEmail($email);
-		
 		//si l'identifiant existe dans la base alors user contiendra les infos de cet user
 		//sinon $user contiendra false
 		if(!$user)
@@ -60,11 +59,11 @@ class ConnexionController
 			//vérifier le mot de passe
 			if(password_verify($pw,$user['password']))
 			{
-				//le mot de passe correcpond
+				//le mot de passe correspond
 				//connecter l'utilisateur
-				$_SESSION['user'] = $user['firstname'].' '.$user['lastname'];
-				$_SESSION['idUser'] = $user['id'];
-				//redirige vers la page tableau de bord du backoffice
+				$_SESSION['user'] = $user['first_name'].' '.$user['last_name'];
+				$_SESSION['idUser'] = $user['id_user'];
+				//redirige vers la page d'accueil
 				header('location:index.php?page=home');
 				exit;
 			}

@@ -1,0 +1,45 @@
+<main class="create">
+
+<h3>Modifier un article</h3>
+    
+    <form method="post" enctype="multipart/form-data"> 
+  		<p>
+			<label for="productname">Produit</label>
+			<input type="text" name="productname" id="productname" value="<?= $product['product_name'] ?>"/>
+		</p>
+		<p>	
+			<label for="texte">Description</label> 
+			<textarea name="texte" id="texte"><?= $product['description'] ?></textarea>
+		</p>
+		<p>	
+			<label for="price">Prix</label> 
+			<input type = "number" name="price" id="price" value = "<?= $product['price'] ?>"/>
+		</p>
+		<p>
+		    <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['categoryId'] ?>" <?= ($categorie['categoryId']==$product['categoryId'])?"selected":""  ?>><?= htmlspecialchars($categorie['category_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+		</p>
+		<p>	
+			<label for="stock">Stock</label> 
+			<input type = "number" name="stock" id="stock" value = "<?= $product['stock'] ?>"/>
+		</p>
+		<img src="<?= $product['src_img'] ?>">
+		<p>
+			<label for="img">Image</label>
+			<input type="file" name="img" id="img"/>
+			<input type="hidden" name="imgBdd" id="imgBdd" value="<?= $product['src_img'] ?>"/>
+		</p>
+		<p>	
+			<label for="alt">Alt</label> 
+			<input type="alt" name="alt" id="alt" value="<?= htmlspecialchars($product['alt_img']) ?>"/>
+		</p>
+
+			<button type="submit">Enregistrer</button>
+			 
+	</form>
+	
+</main>

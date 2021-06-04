@@ -1,0 +1,39 @@
+<main>
+ <section>
+ <h2>Gestion des produits</h2>
+    
+        <button><a href="index.php?page=addProduct">Ajouter un produit</a></button>
+    
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Produit</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Catégorie</th>
+                <th>Stock</th>
+                <th>Image src</th>
+                <th>Image alt</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($products as $product): ?>
+            <tr>
+                <td><?= $product['id_product'] ?></td>
+                <td><?= $product['product_name'] ?></td>
+                <td><?= $product['description'] ?></td>
+                <td><?= $product['price'] ?></td>
+                <td><?= $product['category_name'] ?></td>
+                <td><?= $product['stock'] ?></td>
+                <td><?= $product['src_img'] ?></td>
+                <td><?= $product['alt_img'] ?></td>
+                <td><button><a href="index.php?page=modifyProduct&id=<?=$product['id_product']?>"><i class="fas fa-pen-nib"></i></a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteProduct&id=".$product['id_product'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    
+    </section>
+
+
+</main>

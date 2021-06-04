@@ -40,31 +40,31 @@ textarea {
 header {
     display: flex;
     justify-content: space-between;
-    background-color: yellow;
+    background-color: green;
 }
 
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: hotpink;
+    background-color: lime;
     padding: 1em;
 }
 
 .home {
     padding: 0.4em;
-    background-color: teal;
+    background-color: olive;
     margin-right: 1em;
 }
 
 .admin {
     display:flex;
     flex-direction: column;
-    background-color: cyan;
+    background-color: yellow;
 }
 
 .logo {
-    background-color: lime;
+    background-color: olive;
 }
 
 
@@ -115,7 +115,7 @@ article {
 footer {
     display: flex;
     justify-content: space-between;
-    background-color: yellow;
+    background-color: green;
     padding: 1em;
 }
 

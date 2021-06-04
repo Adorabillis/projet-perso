@@ -136,6 +136,36 @@ else
 			$controller = new Controllers\AuthorController();
 			$controller -> delete();
 			break;
+		case 'gestionProduct':
+			$controller = new Controllers\ProductController();
+			$controller -> display();
+			break;
+		case 'addProduct':
+			$controller = new Controllers\ProductController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> AddSubmit();
+			}
+			else {
+				$controller -> displayAdd();	
+			}
+			break;
+		case 'modifyProduct':
+			$controller = new Controllers\ProductController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> ModifySubmit();
+			}
+			else {
+				$controller -> displayModify();	
+			}
+			break;
+		case 'deleteProduct':
+			$controller = new Controllers\ProductController();
+			$controller -> delete();
+			break;
 		case 'connexion':
 			//include 'controllers/AdminController.php';
 			$controller = new Controllers\ConnexionController();
