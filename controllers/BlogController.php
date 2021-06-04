@@ -11,7 +11,7 @@ class BlogController {
 		$this -> redirectIfNotAdmin();
 		//si le formulaire a été soumis
 	}
-
+	
 	public function display()
 	{
 		//afficher les articles
@@ -22,6 +22,7 @@ class BlogController {
         $template = 'views/back-end/gestionArticle.phtml';
         include 'views/layout.phtml';
 	}
+<<<<<<< HEAD
 	public function displayArticle()
 	{
 		//"sécuriser" l'url : si on change l'url elle revient sur accueil
@@ -31,6 +32,9 @@ class BlogController {
 	    $template = 'views/article.phtml';
         include 'views/layout.phtml';
 	}
+=======
+
+>>>>>>> 469e43e95a3b2317c7fa2ed74aa820fbb1b96067
 		public function delete()
 	{
 	    $model = new \Models\Article();
@@ -101,7 +105,6 @@ class BlogController {
 		header('location:index.php?page=gestionArticle');
 			exit;
 	}
-	
 	
 
 }

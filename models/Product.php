@@ -31,7 +31,7 @@ class Product extends Database
 	public function getProductById(int $id):array
 	{
 		return $this -> findOne("
-		SELECT id_product, product_name, description, price, product.id_category AS categoryId, stock, src_img, alt_img, category_name AS categoryName
+		SELECT id_product, product_name, SUBSTR(description,1,100) AS description100, price, product.id_category AS categoryId, stock, src_img, alt_img, category_name AS categoryName
 		FROM product 
 		INNER JOIN category ON category.id_category = product.id_category
 		WHERE id_product = ?",[$id]);

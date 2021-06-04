@@ -14,7 +14,7 @@ class ProductController {
 
 	public function display()
 	{
-		//afficher les articles
+		//afficher les produits sur le back-office
 		$model = new \Models\Category();
 		$categories = $model -> getAllCategory();
 		$model1 = new \Models\Product();
@@ -22,6 +22,7 @@ class ProductController {
         $template = 'views/back-end/gestionProduct.phtml';
         include 'views/layout.phtml';
 	}
+	
 		public function delete()
 	{
 	    $model = new \Models\Product();

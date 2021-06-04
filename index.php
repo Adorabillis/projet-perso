@@ -25,14 +25,18 @@ else
 		case 'home':
 			$controller = new Controllers\AccueilController();
 			$controller -> display();
-			break;
+		break;
+		case 'article':
+			$controller = new Controllers\AccueilController();
+			$controller -> displayArticle();
+		break;
 		case 'jeu':
 			$controller = new Controllers\GameController();
 			$controller -> display();
 			break;
-		case 'merch':
-			$controller = new Controllers\MerchController();
-			$controller -> display();
+		case 'shop':
+			$controller = new Controllers\ShopController();
+			$controller -> displayAllProducts();
 			break;
 		case 'about':
 			$controller = new Controllers\AboutController();
