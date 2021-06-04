@@ -1,0 +1,26 @@
+<main>
+	
+	<h1>Tous les articles</h1>
+
+	<section>
+		
+		<?php foreach($products as $product): ?>
+			
+			<article>
+				<div>
+					<h3><?= htmlspecialchars($product['product_name']) ?></h3>
+					<img src="<?=$product['src_img']?>" alt="<?=$product['alt_img']?>">
+					<p>Dans la catégorie : <span><?= htmlspecialchars($product['categoryName']) ?></span></p>
+				</div>
+				<div>
+					<p><?=$product['description100']?>...</p>
+					<p><?=$product['price']?></p>
+					<button><a href="index.php?page=product<?= $product['id_product'] ?>">Voir plus</a></button>
+				</div>
+			</article>
+		
+		<?php endforeach; ?>
+	
+	</section>
+
+</main>
