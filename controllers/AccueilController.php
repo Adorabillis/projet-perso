@@ -17,4 +17,14 @@ class AccueilController
 		$template = "views/accueil.phtml";
 		include 'views/layout.phtml';
 	}
+	
+	public function displayArticle()
+	{
+		//"sécuriser" l'url : si on change l'url elle revient sur accueil
+	
+		$model = new \Models\Article();
+	    $article = $model -> getArticleById($_GET['id_article']);
+	    $template = 'views/article.phtml';
+        include 'views/layout.phtml'; 
+	}
 }
