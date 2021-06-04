@@ -22,18 +22,18 @@
 		<nav>
 			<div class="home">
 				<a href="index.php">Home</a>
-				<a href="#">Jeu</a>
-				<a href="#">Merch</a>
 				<a href="#">About</a>
-				<div class="user">
+				<a href="#">Jeu</a>
+				<a href="#">Shop</a>
+			</div>
+			<div class="user">
 				<?php if(isset($_SESSION['user'])): ?>
 					<p>Bonjour <?= $_SESSION['user'] ?></p>
 					<a href="#">Mon compte</a>
 					<a href="index.php?page=connexion&action=deco">Log out</a>
 				<?php else: ?>
-            		<a href="connexion">Log in</a>
+	           		<a href="connexion">Log in</a>
 				<?php endif; ?>
-			</div>
 			</div>
 			<div class="admin">
 				<?php if(isset($_SESSION['admin'])): ?>
