@@ -8,7 +8,9 @@
 /***************/
 /****GENERAL****/
 /***************/
-
+body{
+    background-color: black;
+}
 main {
     width: 100%;
     display: flex;
