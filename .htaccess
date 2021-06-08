@@ -20,5 +20,7 @@ RewriteRule ^gestionProduct$  index.php?page=gestionProduct [L]
 #pages user
 RewriteRule ^connexion$  index.php?page=connexion [L]
 RewriteRule ^newUser$  index.php?page=newUser [L]
+#cart
+RewriteRule ^modifCart-([0-9]+)$  index.php?page=addCart&action=delete&id=$1 [L]
 
 

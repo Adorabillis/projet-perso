@@ -42,14 +42,14 @@ else
 			$controller = new Controllers\CartController();
 			$controller -> displayCart();
 			break;
+		case 'addCart':
+			$controller = new Controllers\CartController();
+			$controller -> addCart();
+			break;
 		case 'product':
 			$controller = new Controllers\ShopController();
 			$controller -> displayProduct();
 		break;
-		case 'about':
-			$controller = new Controllers\AboutController();
-			$controller -> display();
-			break;
 		case 'admin':
 				$controller = new Controllers\AdminController();
 				$controller -> display();

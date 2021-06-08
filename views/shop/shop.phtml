@@ -16,11 +16,11 @@
 					<p><?=$product['description100']?>...</p>
 					<p><?=$product['price']?> €</p>
 					<button><a href="index.php?page=product<?= $product['id_product'] ?>">Voir plus</a></button>
-					<form method="post" action="index.php?action=add&id=<?php $product["id_product"]; ?>">
-					<input type="text" name="quantity" value="1" />  
-                    <input type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
-                    <input type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
-                    <input type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
+					<form>
+					<input id="qte<?= $product['id_product'] ?>"type="text" name="quantity" value="1" />  
+                    <input id="nom<?= $product['id_product'] ?>" type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
+                    <input id="px<?= $product['id_product'] ?>" type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
+                    <input data-id="<?= $product['id_product'] ?>"  type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
                     </form>
 				</div>
 			</article>
@@ -28,5 +28,5 @@
 		<?php endforeach; ?>
 	
 	</section>
-
+<script src="assets/js/cart.js"></script>
 </main>
