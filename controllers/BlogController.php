@@ -22,7 +22,6 @@ class BlogController {
         $template = 'views/back-end/gestionArticle.phtml';
         include 'views/layout.phtml';
 	}
-
 		public function delete()
 	{
 	    $model = new \Models\Article();
