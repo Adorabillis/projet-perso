@@ -46,10 +46,6 @@ else
 			$controller = new Controllers\ShopController();
 			$controller -> displayProduct();
 		break;
-		case 'about':
-			$controller = new Controllers\AboutController();
-			$controller -> display();
-			break;
 		case 'admin':
 				$controller = new Controllers\AdminController();
 				$controller -> display();

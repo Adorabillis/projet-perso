@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class Cart {
+class CartController {
     
     public function addCart()
     {
