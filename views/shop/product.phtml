@@ -1,11 +1,12 @@
 <main>
 	
 	<article>
-		<h1><?= htmlspecialchars($article['titre']) ?></h1>
-		<img src="<?= htmlspecialchars($article['src_img']) ?>" alt="<?= htmlspecialchars($article['alt_img']) ?>">
-		<p>Dans la catégorie <span><?= htmlspecialchars($article['categoryName']) ?></span></p>
-		<p><?= $article['content'] ?></p>
-		<p>Rédigé par <strong><?=htmlspecialchars($article['first_name'])?> <?=htmlspecialchars($article['last_name'])?></strong> le <?= $article['newDate']?> </p>
+		<h1><?= htmlspecialchars($product['product_name']) ?></h1>
+		<img src="<?= htmlspecialchars($product['src_img']) ?>" alt="<?= htmlspecialchars($product['alt_img']) ?>">
+		<p>Dans la catégorie <span><?= htmlspecialchars($product['categoryName']) ?></span></p>
+		<p><?= $product['description'] ?></p>
+		<p><?=htmlspecialchars($product['price'])?></p> 
+		<p><?= $product['newDate']?> </p>
 	</article>
 	
 </main>

@@ -17,15 +17,14 @@ class ShopController
 	public function displayProduct()
 	{
 		//"sécuriser" l'url : si on change l'url elle revient sur accueil
-	//	if(!isset($_GET['id_product']))
-	//	{
-	//		header('location:index.php');
-	//		exit;
-	//	}
+		if(!isset($_GET['id_product']))
+		{
+			header('location:index.php');
+			exit;
+		}
 		$model = new \Models\Product();
-	    $article = $model -> getProductById($_GET['id_product']);
+	    $product = $model -> getProductById($_GET['id_product']);
 	    $template = 'views/shop/product.phtml';
         include 'views/layout.phtml';
 	}
-	
 }

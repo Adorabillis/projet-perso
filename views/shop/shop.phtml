@@ -2,7 +2,7 @@
 	
 	<h1>Tous les articles</h1>
 
-	<section>
+	<section class="shop">
 		
 		<?php foreach($products as $product): ?>
 			
@@ -10,12 +10,18 @@
 				<div>
 					<h3><?= htmlspecialchars($product['product_name']) ?></h3>
 					<img src="<?=$product['src_img']?>" alt="<?=$product['alt_img']?>">
-					<p>Dans la catégorie : <span><?= htmlspecialchars($product['categoryName']) ?></span></p>
+					<p>Dans la catégorie : <span><?= htmlspecialchars($product['category_name']) ?></span></p>
 				</div>
 				<div>
 					<p><?=$product['description100']?>...</p>
-					<p><?=$product['price']?></p>
+					<p><?=$product['price']?> €</p>
 					<button><a href="index.php?page=product<?= $product['id_product'] ?>">Voir plus</a></button>
+					<form method="post" action="index.php?action=add&id=<?php $product["id_product"]; ?>">
+					<input type="text" name="quantity" value="1" />  
+                    <input type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
+                    <input type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
+                    <input type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
+                    </form>
 				</div>
 			</article>
 		

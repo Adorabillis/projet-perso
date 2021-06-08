@@ -38,6 +38,14 @@ else
 			$controller = new Controllers\ShopController();
 			$controller -> displayAllProducts();
 			break;
+		case 'cart':
+			$controller = new Controllers\CartController();
+			$controller -> displayCart();
+			break;
+		case 'product':
+			$controller = new Controllers\ShopController();
+			$controller -> displayProduct();
+		break;
 		case 'about':
 			$controller = new Controllers\AboutController();
 			$controller -> display();
@@ -49,6 +57,21 @@ else
 		case 'dashboard':
 			$controller = new Controllers\DashboardController();
 			$controller -> display();
+			break;
+		case 'gestionAccueil':
+			$controller = new Controllers\GestionAccueilController();
+			$controller -> display();
+			break;
+		case 'modifyHome':
+			$controller = new Controllers\GestionAccueilController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> ModifySubmit();
+			}
+			else {
+				$controller -> displayModify();
+			}
 			break;
 		case 'gestionArticle':
 			$controller = new Controllers\BlogController();

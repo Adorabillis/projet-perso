@@ -45,7 +45,7 @@ class BlogController {
 		$author = $_POST['author'];
 		$title = $_POST['title'];
 		$description = $_POST['texte'];
-		$src = "img/blog/{$_FILES['src']['name']}";
+		$src = "assets/img/{$_FILES['src']['name']}";
 		$alt = $_POST['alt'];
 		
 		//upload mon image
@@ -80,7 +80,7 @@ class BlogController {
 			$src = $_POST['imgBdd'];
 		}
 		else {
-			$src = "img/blog/{$_FILES['img']['name']}";
+			$src = "assets/img/{$_FILES['img']['name']}";
 			move_uploaded_file ($_FILES['img']['tmp_name'], $src );
 		}
 		$alt = $_POST['alt'];

@@ -10,14 +10,21 @@
 /***************/
 body{
     background-color: black;
+   
 }
 main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     color: white;
-    
+    font-family: 'Orbitron', sans-serif;
+ /*font-family: 'Chakra Petch', sans-serif;
+*/
+}
+
+table {
+    color: white;
 }
 
 a {
@@ -37,6 +44,12 @@ textarea {
 
 }
 
+.log-in {
+    width: 50%;
+    margin-top: 8em;
+    
+}
+
 /****************/
 /*****HEADER*****/
 /****************/
@@ -44,33 +57,30 @@ textarea {
 header {
     display: flex;
     justify-content: space-between;
-    background-color: green;
+    align-items: stretch;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    background-color: lime;
-    padding: 1em;
+    font-family: 'Press Start 2P', cursive;
+    /*background-color: black;*/
 }
 
-.home {
-    padding: 0.4em;
-    background-color: olive;
-    margin-right: 1em;
+nav a {
+    color: white;
 }
-
 .admin {
     display:flex;
     flex-direction: column;
-    background-color: yellow;
+    background-color: gray;
 }
 
-.logo {
-    background-color: olive;
+img {
+    width: 13em;
 }
-
 
 /****************/
 /*****BANNER*****/
@@ -78,9 +88,25 @@ nav {
 
 .banner {
     width: 100%;
-    background-color: mediumorchid;
+    height: 35em;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-image: url(../img/snake3.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h2, h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.banner h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+
 }
 
 /***************/
@@ -88,10 +114,16 @@ nav {
 /***************/
 
 .about {
-    background-color: orchid;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(../img/snake4.jpeg);
+    background-position: left;
+    background-size: cover;
+    padding-top: 3em;
+    padding-bottom: 10em;
+    background-repeat: no-repeat;
 }
 
 /****************/
@@ -103,13 +135,21 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-content: space-between;
-    background-color: lavender;
 }
 
 article {
     width: 90%;
-    background-color: purple;
     flex-direction: column;
+}
+
+/***************/
+/*****ABOUT*****/
+/***************/
+
+.shop {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 /****************/
@@ -119,7 +159,7 @@ article {
 footer {
     display: flex;
     justify-content: space-between;
-    background-color: green;
+    background-color: #2ebf2a;
     padding: 1em;
 }
 

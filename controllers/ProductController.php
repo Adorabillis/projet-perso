@@ -44,7 +44,7 @@ class ProductController {
 		$prix = $_POST['price'];
 		$categorie = $_POST['category'];
 		$quantite = $_POST['stock'];
-		$src = "img/blog/{$_FILES['src']['name']}";
+		$src = "assets/img/{$_FILES['src']['name']}";
 		$alt = $_POST['alt'];
 		
 		//upload mon image
@@ -73,20 +73,20 @@ class ProductController {
 		$name = $_POST['productname'];
 		$description = $_POST['texte'];
 		$prix = $_POST['price'];
-		$categorie = $_POST['category'];
+		$categories = $_POST['category'];
 		$quantite = $_POST['stock'];
 		if (empty($_FILES['src']['name'])) {
 			$src = $_POST['imgBdd'];
 		}
 		else {
-			$src = "img/blog/{$_FILES['img']['name']}";
+			$src = "assets/img/{$_FILES['img']['name']}";
 			move_uploaded_file ($_FILES['img']['tmp_name'], $src );
 		}
 		$alt = $_POST['alt'];
 		
 		//mettre les datas en bdd
 		$model = new \Models\Product();
-		$modifyProduct = $model -> ModifyProduct($name, $description, $prix, $categorie, $quantite, $src, $alt, $_GET['id']);
+		$modifyProduct = $model -> ModifyProduct($name, $description, $prix, $categories, $quantite, $src, $alt, $_GET['id']);
             
 		header('location:index.php?page=gestionProduct');
 			exit;

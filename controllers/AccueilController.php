@@ -6,13 +6,14 @@ class AccueilController
 {
 	public function display()
 	{
+		
 		//afficher les articles de blog sur la page d'accueil
 		$model1 = new \Models\Article();
 		$articles = $model1 -> getNewArticles();
-		
+		$model2 = new \Models\Accueil();
+	    $contents = $model2 -> findAllContent();
 		//méthode qui permet d'afficher la page d'accueil
 		$model = new \Models\Accueil();
-		
 		//appeler la vue 
 		$template = "views/accueil.phtml";
 		include 'views/layout.phtml';
@@ -27,4 +28,6 @@ class AccueilController
 	    $template = 'views/article.phtml';
         include 'views/layout.phtml'; 
 	}
+	
+	
 }

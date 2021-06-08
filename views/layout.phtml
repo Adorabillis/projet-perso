@@ -6,6 +6,12 @@
 	<title>Projet Perso</title>
 	<!--google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Athiti:500|Merienda:400,700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
 	<!--font awesome-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/brands.min.css">
@@ -16,30 +22,27 @@
 <body>
 
 	<header>
-		<div class="logo">
-			<img src="" alt="">
-		</div>
 		<nav>
-			<div class="home">
+			<img src="assets/img/logo3.png" alt="logo_snake">
 				<a href="index.php">Home</a>
-				<a href="#">About</a>
+				<a href="index.php#about">About</a>
 				<a href="#">Jeu</a>
 				<a href="shop">Shop</a>
-			</div>
+				<a href="cart"><i class="fas fa-shopping-bag"></i></a>
 			<div class="user">
 				<?php if(isset($_SESSION['user'])): ?>
 					<p>Bonjour <?= $_SESSION['user'] ?></p>
 					<a href="#">Mon compte</a>
 					<a href="index.php?page=connexion&action=deco">Log out</a>
 				<?php else: ?>
-	           		<a href="connexion">Log in</a>
+	           		<a href="connexion"><i class="fas fa-user"></i></a>
 				<?php endif; ?>
 			</div>
 			<div class="admin">
 				<?php if(isset($_SESSION['admin'])): ?>
 					<p>Bonjour <?= $_SESSION['admin'] ?></p>
 					<a href="index.php?page=dashboard">Dashboard</a>
-					<a href="index.php?page=admin&action=deco">Log out</a>
+					<a href="index.php?page=admin&action=deco"><i class="fas fa-user-slash"></i></a>
 				<?php endif; ?>
 			</div>
 		</nav>
@@ -48,6 +51,8 @@
 	
 	<!-- code principal de la page -->
 	<?php include $template ?>
+	
+	<button><a href="#"><i class="fas fa-angle-double-up"></i></a></button>
 	
 	<footer class="bottom">
 		<div class="contact">

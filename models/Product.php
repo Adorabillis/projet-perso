@@ -7,7 +7,7 @@ class Product extends Database
 	public function getAllProducts():array
 	{
 		return $this -> findAll(
-			'SELECT id_product, product_name, stock, price, category_name, description, src_img, alt_img FROM product
+			'SELECT id_product, product_name, stock, price, category_name, description, SUBSTR(description,1,100) AS description100, src_img, alt_img FROM product
 			INNER JOIN category ON category.id_category = product.id_category'
 			);
 	}
@@ -31,7 +31,7 @@ class Product extends Database
 	public function getProductById(int $id):array
 	{
 		return $this -> findOne("
-		SELECT id_product, product_name, SUBSTR(description,1,100) AS description100, price, product.id_category AS categoryId, stock, src_img, alt_img, category_name AS categoryName
+		SELECT id_product, product_name, description, SUBSTR(description,1,100) AS description100, price, product.id_category AS categoryId, stock, src_img, alt_img, category_name AS categoryName
 		FROM product 
 		INNER JOIN category ON category.id_category = product.id_category
 		WHERE id_product = ?",[$id]);

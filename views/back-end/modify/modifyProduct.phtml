@@ -1,6 +1,6 @@
 <main class="create">
 
-<h3>Modifier un article</h3>
+<h3>Modifier un produit</h3>
     
     <form method="post" enctype="multipart/form-data"> 
   		<p>
@@ -18,11 +18,11 @@
 		<p>
 		    <label for='category'>Catégorie</label>
 			<select name="category" id="category">
-			    <?php foreach($categories as $categorie): ?>
-                <option value="<?= $categorie['categoryId'] ?>" <?= ($categorie['categoryId']==$product['categoryId'])?"selected":""  ?>><?= htmlspecialchars($categorie['category_name']) ?></option>
+				<?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id_category'] ?>"><?= htmlspecialchars($categorie['category_name']) ?></option>
                 <?php endforeach; ?>
             </select>
-		</p>
+        </p>
 		<p>	
 			<label for="stock">Stock</label> 
 			<input type = "number" name="stock" id="stock" value = "<?= $product['stock'] ?>"/>

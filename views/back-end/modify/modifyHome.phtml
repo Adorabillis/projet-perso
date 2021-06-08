@@ -1,0 +1,29 @@
+<main>
+
+<h3>Modifier l'Accueil</h3>
+    
+    <form method="post" enctype="multipart/form-data"> 
+  
+		<p>
+			<label for="name">Titre</label>
+			<input type="text" name="name" id="name" value="<?= $content['name'] ?>"/>
+		</p>
+		<p>	
+			<label for="content">Description</label> 
+			<textarea name="content" id="content"><?= $content['content'] ?></textarea>
+		</p>
+		<p>
+			<label for='image'>Image</label>
+			<input type="file" name="image" id="image">
+			<input type="hidden" name="imageBdd" id="imageBdd" value="<?= $content['src_img'] ?>"/>
+		</p>
+		<p>	
+			<label for="alt">Nom de l'image</label> 
+			<textarea name="alt" id="alt"><?= $content['alt_img'] ?></textarea>
+		</p>
+
+			<button type="submit">Enregistrer</button>
+			 
+	</form>
+	
+</main>

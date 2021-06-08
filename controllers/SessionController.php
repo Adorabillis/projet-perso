@@ -18,4 +18,16 @@ Trait SessionController
 			header('location:home');
 		}
 	}
+	
+	public function sessionCart()
+	{
+		if(!isset($_SESSION))
+        {
+            session_start();
+        }
+        if(!isset($_SESSION['cart']))
+        {
+            $_SESSION['cart'] = array();
+        } 
+	}
 }
