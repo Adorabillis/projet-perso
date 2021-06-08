@@ -42,6 +42,10 @@ else
 			$controller = new Controllers\CartController();
 			$controller -> displayCart();
 			break;
+		case 'addCart':
+			$controller = new Controllers\CartController();
+			$controller -> addCart();
+			break;
 		case 'product':
 			$controller = new Controllers\ShopController();
 			$controller -> displayProduct();
