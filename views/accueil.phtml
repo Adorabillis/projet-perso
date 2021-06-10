@@ -1,38 +1,38 @@
 <main>
-
-    <section class="banner">
-        <h1>Titre de l'événement</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique nisi asperiores libero accusamus voluptates rem aperiam iusto dolor. Dolorum nihil quasi alias, perspiciatis voluptates, ipsa quas sunt pariatur odit corrupti doloribus est. Veniam dolore dolor enim officia est rerum quibusdam quis consectetur, ut nobis nulla tempora molestias pariatur laudantium quia esse.</p> 
-    </section>
+	<div class="slide1">
+	    <section class="banner">
+	        <h1>Titre de l'événement</h1>
+	        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique nisi asperiores libero accusamus voluptates rem aperiam iusto dolor. Dolorum nihil quasi alias, perspiciatis voluptates, ipsa quas sunt pariatur odit corrupti doloribus est. Veniam dolore dolor enim officia est rerum quibusdam quis consectetur, ut nobis nulla tempora molestias pariatur laudantium quia esse.</p> 
+	    </section>
+	</div>
+	<div class="slide2">
+	    <section id="about" class="about">
+	        <h2>Something...</h2>
+	        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique nisi asperiores libero accusamus voluptates rem aperiam iusto dolor. Dolorum nihil quasi alias, perspiciatis voluptates, ipsa quas sunt pariatur odit corrupti doloribus est. Veniam dolore dolor enim officia est rerum quibusdam quis consectetur, ut nobis nulla tempora molestias pariatur laudantium quia esse.</p> 
 	
-	<div class="wrapper">
-    <section id="about" class="about">
-        <h2>Something...</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique nisi asperiores libero accusamus voluptates rem aperiam iusto dolor. Dolorum nihil quasi alias, perspiciatis voluptates, ipsa quas sunt pariatur odit corrupti doloribus est. Veniam dolore dolor enim officia est rerum quibusdam quis consectetur, ut nobis nulla tempora molestias pariatur laudantium quia esse.</p> 
-
-        <p>Perspiciatis beatae sapiente commodi doloribus vel voluptatem culpa quo? Deserunt aliquid nesciunt dolorem expedita, quisquam ipsa eveniet nulla laboriosam quod quo? Iste, debitis ullam? Quae consequuntur dolore dolores fuga deleniti voluptas repellendus doloremque quas cupiditate, obcaecati, at architecto quo explicabo amet, unde repellat? Ad saepe non perspiciatis iure.</p>
-    </section>
-
-    <section class="blog">
-       <?php foreach($articles as $article): ?>
-			
-			<article>
-				<div>
-					<h3><?= htmlspecialchars($article['titre']) ?></h3>
-					<p>Dans la catégorie : <span><?= htmlspecialchars($article['category_name']) ?></span></p>
-				</div>
-				<div>
-					<p><?=$article['content100']?>...</p>
-					<button><a href="index.php?page=article&id_article=<?= $article['id_article'] ?>">Voir plus</a></button>
-				</div>
+	        <p>Perspiciatis beatae sapiente commodi doloribus vel voluptatem culpa quo? Deserunt aliquid nesciunt dolorem expedita, quisquam ipsa eveniet nulla laboriosam quod quo? Iste, debitis ullam? Quae consequuntur dolore dolores fuga deleniti voluptas repellendus doloremque quas cupiditate, obcaecati, at architecto quo explicabo amet, unde repellat? Ad saepe non perspiciatis iure.</p>
+	    </section>
+	</div>
+	<div class="slide3">
+	    <section class="blog">
+	       <?php foreach($articles as $article): ?>
 				
-				<div>
-					<p>Rédigé par <strong><?=htmlspecialchars($article['first_name'])?> <?=htmlspecialchars($article['last_name'])?></strong> le <?= $article['newDate']?> </p>
-				</div>
-			</article>
-		
-		<?php endforeach; ?>
-
-    </section>
+				<article>
+					<div>
+						<h3><?= htmlspecialchars($article['titre']) ?></h3>
+						<p>Dans la catégorie : <span><?= htmlspecialchars($article['category_name']) ?></span></p>
+					</div>
+					<div>
+						<p><?=$article['content100']?>...</p>
+						<button><a href="index.php?page=article&id_article=<?= $article['id_article'] ?>">Voir plus</a></button>
+					</div>
+					
+					<div>
+						<p>Rédigé par <strong><?=htmlspecialchars($article['first_name'])?> <?=htmlspecialchars($article['last_name'])?></strong> le <?= $article['newDate']?> </p>
+					</div>
+				</article>
+			<?php endforeach; ?>
+		</section>
     </div>
+    
 </main>
