@@ -1,8 +1,8 @@
 /***************/
 /***VARIABLES***/
 /***************/
-:root {
-    --head-bg-color: yellow;
+:root 
+   { --head-bg-color: yellow;
 }
 
 /***************/
@@ -149,6 +149,19 @@ article {
     display: flex;
     justify-content: center;
     flex-direction: row;
+}
+
+
+.slide1 {
+   background: url(slide1-bg.jpg) center 0 no-repeat fixed;
+}
+
+.slide2 {
+   background: url(slide2-bg.jpg) center 0 no-repeat fixed;
+}
+
+.slide3 {
+   background: url(slide3-bg.jpg) center 0 no-repeat fixed;
 }
 
 /****************/
