@@ -236,7 +236,7 @@ function setWall(wall_value){
     // 1 for the main menu
     // 2 for the settings screen
     // 3 for the game over screen
-    let showScreen = function(screen_opt){
+function showScreen(screen_opt){
         switch(screen_opt){
                 
             case 0:  screen_snake.style.display = "block";
@@ -267,7 +267,8 @@ function setWall(wall_value){
     
 /////////////////////////////////////////////////////////////
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded",function()
+{
   canvas = document.getElementById("snake");
   ctx = canvas.getContext("2d");
                
@@ -306,10 +307,14 @@ document.addEventListener("DOMContentLoaded",function(){
         // Settings
         
             // speed
-            for(let i = 0; i < speed_setting.length; i++){
-                speed_setting[i].addEventListener("click", function(){
-                    for(let i = 0; i < speed_setting.length; i++){
-                        if(speed_setting[i].checked){
+            for(let i = 0; i < speed_setting.length; i++)
+            {
+                speed_setting[i].addEventListener("click", function()
+                {
+                    for(let i = 0; i < speed_setting.length; i++)
+                    {
+                        if(speed_setting[i].checked)
+                        {
                             setSnakeSpeed(speed_setting[i].value);
                         }
                     }
@@ -317,25 +322,32 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         
             // wall
-            for(let i = 0; i < wall_setting.length; i++){
-                wall_setting[i].addEventListener("click", function(){
-                    for(let i = 0; i < wall_setting.length; i++){
-                        if(wall_setting[i].checked){
+            for(let i = 0; i < wall_setting.length; i++)
+            {
+                wall_setting[i].addEventListener("click", function()
+                {
+                    for(let i = 0; i < wall_setting.length; i++)
+                    {
+                        if(wall_setting[i].checked)
+                        {
                             setWall(wall_setting[i].value);
                         }
                     }
                 });
             }
 
-        document.onkeydown = function(evt){
-            if(screen_gameover.style.display == "block"){
+        document.onkeydown = function(evt)
+        {
+            if(screen_gameover.style.display == "block")
+            {
                 evt = evt || window.event;
-                if(evt.keyCode == 32){
+                if(evt.keyCode == 32)
+                {
                     newGame();
                 }
             }
         }
-    }
+    
 
   
 });
