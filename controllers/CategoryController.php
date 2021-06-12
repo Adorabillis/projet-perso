@@ -36,14 +36,16 @@ class CategoryController {
 	
 	public function AddSubmit()
 	{
-		//préparer les données pour les mettre dans la base de données
-		$nom = $_POST['name'];
-
-		//mettre les datas en bdd
-		$model = new \Models\Category();
-		$model -> AddCategory($nom);
-            
-		header('location:index.php?page=gestionCategory');
+		if (isset( $_POST['name']) && !empty($_POST['name']))
+		{
+			//préparer les données pour les mettre dans la base de données
+			$nom = $_POST['name'];
+	
+			//mettre les datas en bdd
+			$model = new \Models\Category();
+			$model -> AddCategory($nom);
+		}        
+			header('location:index.php?page=gestionCategory');
 			exit;
 	}
 		public function displayModify()

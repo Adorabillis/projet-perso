@@ -1,22 +1,29 @@
-
+<main>
     <table>
         <tr>
             <th>Nom</th>
             <th>Prix</th>
             <th>Quantité</th>
+            <th>Supprimer</th>
         </tr>
-        <?php foreach($_SESSION["shopping_cart"] as $cart): ?>
-        <tr>
-            <td><?= $cart['item_name'] ?></td>
-            <td><?= $cart['item_price'] ?> €</td>
-            <td><?= $cart['item_quantity'] ?></td>
-            <td><button><a href="modifCart-<?= $cart['item_id'] ?>">suppr</a></button></td>
-        </tr>
-        <?php endforeach ?>
+        <?php if(!empty($_SESSION["shopping_cart"])): ?>
+            <?php foreach($_SESSION["shopping_cart"] as $cart): ?>
+                <tr>
+                    <td><?= $cart['item_name'] ?></td>
+                    <td><?= $cart['item_price'] ?> €</td>
+                    <td><?= $cart['item_quantity'] ?></td>
+                    <td><button><a href="modifCart-<?= $cart['item_id'] ?>">suppr</a></button></td>
+                </tr>
+            <?php endforeach ?>
+        <?php else: ?>
+            <tr>
+                <td>Votre panier est vide.</td>
+            </tr>
+        <?php endif; ?>
         <tr>
             <tfoot>
                 <td>total</td>
             </tfoot>
         </tr>
     </table>
-    
+</main>

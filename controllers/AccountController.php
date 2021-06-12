@@ -2,20 +2,20 @@
 
 namespace Controllers;
 
-class DashboardController 
+class AccountController 
 {
 	
 	use SessionController;
 	
 		public function __construct()
 	{
-		$this -> redirectIfNotAdmin();
+		$this -> redirectIfNotUser();
 	}
 	
 	public function display()
 	{
 		//afficher le formulaire de connexion
-            $template = 'back-end/dashboard.phtml';
+            $template = 'views/userAccount.phtml';
             include 'views/layout.phtml';
 	}
 }

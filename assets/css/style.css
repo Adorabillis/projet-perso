@@ -1,19 +1,16 @@
 /***************/
-/***VARIABLES***/
-/***************/
-:root {
-    --head-bg-color: yellow;
-}
-
-/***************/
 /****GENERAL****/
 /***************/
 body{
     background-color: black;
-   
+    box-sizing: border-box;
+    display : flex;
+    flex-direction: column;
+     align-items: stretch;
+
 }
 main {
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -23,13 +20,29 @@ main {
 */
 }
 
-table {
-    color: white;
+h2, h1, h3 {
+    font-family: 'Press Start 2P', cursive;
 }
+
+p {
+    font-size:1em;
+}
+
 a {
     text-decoration: none;
 }
 
+/***************/
+/****TABLEAU****/
+/***************/
+
+table {
+    color: white;
+}
+
+/***************/
+/*****FORMS*****/
+/***************/
 input, 
 textarea {
 	border: 1px solid #4c4343;
@@ -40,19 +53,11 @@ textarea {
 textarea {
 	width: 50%;
 	height: 13em;
-
-}
-
-.log-in {
-    width: 50%;
-    margin-top: 8em;
-    
 }
 
 /****************/
 /*****HEADER*****/
 /****************/
-
 header {
     display: flex;
     justify-content: space-between;
@@ -65,16 +70,26 @@ nav {
     justify-content: space-between;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
-    /*background-color: black;*/
 }
 
 nav a {
     color: white;
 }
+
+nav p {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .admin {
     display:flex;
     flex-direction: column;
     background-color: gray;
+}
+
+.log-in {
+    width: 50%;
+    margin-top: 8em;
 }
 
 img {
@@ -82,9 +97,29 @@ img {
 }
 
 /****************/
-/*****BANNER*****/
+/*****ACCUEIL****/
 /****************/
 
+/*************BACKGROUNDS************/
+
+.slide1 {
+   background: url(../img/snake3.jpeg) center 0 no-repeat fixed;
+   background-size: cover;
+   background-position: 30% 80%;
+}
+
+.slide2 {
+   background: url(../img/snake4.jpeg) center 0 no-repeat fixed;
+   background-size: cover;
+}
+
+.slide3 {
+   background: url(../img/snake2.jpeg) center 0 no-repeat fixed;
+   height: 100%;
+   background-size: cover;
+}
+
+/*************BANNER************/
 .banner {
     width: 100%;
     height: 35em;
@@ -92,32 +127,16 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/snake3.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-h2, h1 {
-    font-family: 'Press Start 2P', cursive;
-}
-
-.banner h2 {
-    font-family: 'Press Start 2P', cursive;
-    color: white;
-
-}
-
-/***************/
-/*****ABOUT*****/
-/***************/
-
+/*************ABOUT************/
 .about {
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../img/snake4.jpeg);
     background-position: left;
     background-size: cover;
     padding-top: 3em;
@@ -125,26 +144,21 @@ h2, h1 {
     background-repeat: no-repeat;
 }
 
-/****************/
-/******BLOG******/
-/****************/
-
+/*************BLOG************/
 .blog {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: space-between;
 }
-
 article {
     width: 90%;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-/***************/
-/*****ABOUT*****/
-/***************/
-
+/*************SHOP************/
 .shop {
     display: flex;
     justify-content: center;
@@ -162,15 +176,140 @@ footer {
     padding: 1em;
 }
 
+/****************/
+/***SNAKE GAME***/
+/****************/
+
+/*************CANVAS************/
+canvas{
+     display: none;
+     border-style: solid;
+     border-width: 10px;
+     border-color: #FFFFFF;
+ }
+ canvas:focus{
+     outline: none;
+ }
+ 
+.wrap{
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+/*************SCORE************/
+ .score{
+     display: flex;
+     align-content: space-between;
+     width: 240px;
+     font-size: 20px;
+     color: #FFFFFF;
+     text-align: right;
+ }
+
+/*************GAME OVER************/
+#gameover{
+    display: none;
+    width: 340px;
+    padding-top: 95px;
+    padding-bottom: 95px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px;
+    color: #FFF;
+}
+#gameover p{
+    margin-top: 25px;
+    font-size: 20px;
+}
+#gameover span {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+#gameover a, #setting a, #menu a{
+    display: block;
+}
+#gameover a, #setting a:hover, #menu a:hover{
+    cursor: pointer;
+}
+#gameover a:hover::before, #setting a:hover::before,
+#menu a:hover::before {
+    content: ">";
+    margin-right: 10px;
+}
+
+/*************MENU************/
+#menu{
+    display: block;
+    width: 340px;
+    padding-top: 95px;
+    padding-bottom: 95px;
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #FFF;
+}
+#menu h3{
+    animation: logo-ani 1000ms linear infinite;
+    margin-bottom: 30px;
+    
+}
+#menu a{
+    font-size: 30px;
+}
+@keyframes logo-ani{
+   50%{transform: scale(1.3,1.3);}
+  100%{transform: scale(1.0,1.0);}
+}
+@keyframes logo-ani{
+   50%{transform: scale(1.3,1.3);}
+  100%{transform: scale(1.0,1.0);}
+}
+
+
+/* Settings Screen Style */
+#setting{
+    display: none;
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    font-size: 30px;
+    color: #FFF;
+    text-align: center;
+}
+#setting h4{
+    margin-bottom: 15px;
+}
+#setting p{
+    margin-top: 10px;
+}
+#setting input{
+    display:none;
+}
+#setting label{
+    cursor: pointer;
+}
+#setting input:checked + label{
+    background-color: #FFF;
+    color: #000;
+}
+ 
 
 /*   médiaquerries   */
 /*   quand mon site est affiché sur une tablette et que je pars  d'un mobile first (min-width: 768px) */
 /*   quand mon site est affiché sur une tablette et que je pars  d'un PC first (max-width: 1024px) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
 
 main {
 	width: 90%;
 	margin: auto;
+}
+
+p {
+  font-size:1.3em;
 }
 
 .blog {
@@ -180,6 +319,8 @@ main {
 
 article {
     width: 40%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
     
 }

@@ -23,21 +23,19 @@
 
 	<header>
 		<nav>
-			<img src="assets/img/logo3.png" alt="logo_snake">
+			<a href="home"><img src="assets/img/logo3.png" alt="logo_snake"></a>
 				<a href="index.php">Home</a>
 				<a href="index.php#about">About</a>
-				<a href="#">Jeu</a>
+				<a href="jeu">Jeu</a>
 				<a href="shop">Shop</a>
 				<a href="cart"><i class="fas fa-shopping-bag"></i></a>
-			<div class="user">
 				<?php if(isset($_SESSION['user'])): ?>
+					<a href="account"><i class="fas fa-user"></a>
 					<p>Bonjour <?= $_SESSION['user'] ?></p>
-					<a href="#">Mon compte</a>
 					<a href="index.php?page=connexion&action=deco">Log out</a>
 				<?php else: ?>
 	           		<a href="connexion"><i class="fas fa-user"></i></a>
 				<?php endif; ?>
-			</div>
 			<div class="admin">
 				<?php if(isset($_SESSION['admin'])): ?>
 					<p>Bonjour <?= $_SESSION['admin'] ?></p>
@@ -62,6 +60,7 @@
 		</div>
 	</footer>
 	<script type="text/javascript" src="assets/js/main.js"></script>
+
 	</body>
 </html>
 	

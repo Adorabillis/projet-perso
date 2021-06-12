@@ -38,6 +38,10 @@ else
 			$controller = new Controllers\ShopController();
 			$controller -> displayAllProducts();
 			break;
+		case 'product':
+			$controller = new Controllers\ShopController();
+			$controller -> displayProduct();
+		break;
 		case 'cart':
 			$controller = new Controllers\CartController();
 			$controller -> displayCart();
@@ -46,9 +50,9 @@ else
 			$controller = new Controllers\CartController();
 			$controller -> addCart();
 			break;
-		case 'product':
-			$controller = new Controllers\ShopController();
-			$controller -> displayProduct();
+		case 'account':
+			$controller = new Controllers\AccountController();
+			$controller -> display();
 		break;
 		case 'admin':
 				$controller = new Controllers\AdminController();

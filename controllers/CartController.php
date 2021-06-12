@@ -7,7 +7,7 @@ class CartController {
     public function addCart()
     {
         
-             if(isset($_GET["action"]))  
+         if(isset($_GET["action"]))  
          {  
               if($_GET["action"] == "delete")  
               {  
@@ -15,7 +15,7 @@ class CartController {
                    {  
                         if($values["item_id"] == $_GET['id'])  
                         {  
-                             unset($_SESSION["shopping_cart"][$keys]);  
+                            unset($_SESSION["shopping_cart"][$keys]);  
                              
                             header('location:index.php?page=cart');
                             
@@ -56,7 +56,7 @@ class CartController {
           }  
           
      
-    }
+    }//end addCart()
     
     public function displayCart()
     {

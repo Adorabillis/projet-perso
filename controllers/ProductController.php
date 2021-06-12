@@ -38,24 +38,26 @@ class ProductController {
 	
 	public function AddSubmit()
 	{
-		//préparer les données pour les mettre dans la base de données
-		$name = $_POST['productname'];
-		$description = $_POST['texte'];
-		$prix = $_POST['price'];
-		$categorie = $_POST['category'];
-		$quantite = $_POST['stock'];
-		$src = "assets/img/{$_FILES['src']['name']}";
-		$alt = $_POST['alt'];
-		
-		//upload mon image
-		move_uploaded_file ($_FILES['src']['tmp_name'], $src);
-		
-		//mettre les datas en bdd
-		$model = new \Models\Product();
-		$model -> AddProduct($name, $description, $prix, $categorie, $quantite, $src, $alt);
-            
-		header('location:index.php?page=gestionProduct');
-			exit;
+		if (isset( $_POST['productname']) && !empty($_POST['productname']) && isset( $_POST['texte']) && !empty($_POST['texte']) && isset( $_POST['price']) && !empty($_POST['price']) && isset( $_POST['category']) && !empty($_POST['category']) &&isset( $_POST['stock']) &&  !empty($_POST['stock']) && isset( $_POST['src']) && !empty($_POST['src']) && isset( $_POST['alt']) && !empty($_POST['alt']))
+		{
+			//préparer les données pour les mettre dans la base de données
+			$name = $_POST['productname'];
+			$description = $_POST['texte'];
+			$prix = $_POST['price'];
+			$categorie = $_POST['category'];
+			$quantite = $_POST['stock'];
+			$src = "assets/img/{$_FILES['src']['name']}";
+			$alt = $_POST['alt'];
+			
+			//upload mon image
+			move_uploaded_file ($_FILES['src']['tmp_name'], $src);
+			
+			//mettre les datas en bdd
+			$model = new \Models\Product();
+			$model -> AddProduct($name, $description, $prix, $categorie, $quantite, $src, $alt);
+		}        
+			header('location:index.php?page=gestionProduct');
+				exit;
 	}
 		public function displayModify()
 	{
