@@ -1,6 +1,7 @@
 // Canvas & Context
 let canvas;
 let ctx;
+let start;
 
 // Snake
 let snake;
@@ -32,29 +33,39 @@ let speed_setting;
 let wall_setting;
 
 
-function activeDot(x, y){
+function activeDot(x, y)
+{
       ctx.fillStyle = "#FFFFFF";
       ctx.fillRect(x * 10, y * 10, 10, 10);
 }
 
-function changeDir(key){
-      
-      if(key == 38 && snake_dir != 2){
+function changeDir(key)
+{
+      if(key == 38 && snake_dir != 2)
+      {
           snake_next_dir = 0;
-      }else{
-      
-      if (key == 39 && snake_dir != 3){
-          snake_next_dir = 1;
-      }else{
-      
-      if (key == 40 && snake_dir != 0){
-          snake_next_dir = 2;
-      }else{
-          
-      if(key == 37 && snake_dir != 1){
-          snake_next_dir = 3;
-      } } } }
-      
+      }
+      else
+      {
+          if (key == 39 && snake_dir != 3)
+          {
+              snake_next_dir = 1;
+          }
+          else
+          {
+              if (key == 40 && snake_dir != 0)
+              {
+                  snake_next_dir = 2;
+              }
+              else
+              {
+                  if(key == 37 && snake_dir != 1)
+                  {
+                      snake_next_dir = 3;
+                  } 
+              }
+           } 
+      }
 }
 
 function addFood(){
@@ -67,14 +78,16 @@ function addFood(){
       }
   }
 
-function checkBlock(x, y, _x, _y){
+function checkBlock(x, y, _x, _y)
+{
       return (x == _x && y == _y) ? true : false;
   }
   
     
-function altScore(score_val){
+function altScore(score_val)
+{
       ele_score.innerHTML = String(score_val);
-  }
+}
 
   /////////////////////////////////////////////////////////////
   
@@ -175,18 +188,15 @@ function mainLoop()
         // --------------------
 
             activeDot(food.x, food.y);
-        
-    // Debug
-    //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;    
 
             setTimeout(mainLoop, snake_speed);
 }
   
   /////////////////////////////////////////////////////////////
 
+
 function newGame()
 {
-        
         showScreen(0);
         screen_snake.focus();
       
@@ -269,34 +279,35 @@ function showScreen(screen_opt){
 
 document.addEventListener("DOMContentLoaded",function()
 {
+ 
   canvas = document.getElementById("snake");
   ctx = canvas.getContext("2d");
-               
+
+
   // Screens
-  screen_snake = document.getElementById("snake");
-  screen_menu = document.getElementById("menu");
-  screen_gameover = document.getElementById("gameover");
-  screen_setting = document.getElementById("setting");
-        
+ screen_snake = document.getElementById("snake");
+ screen_menu = document.getElementById("menu");
+ screen_gameover = document.getElementById("gameover");
+ screen_setting = document.getElementById("setting");
+
   // Buttons
   button_newgame_menu = document.getElementById("newgame_menu");
   button_newgame_setting = document.getElementById("newgame_setting");
   button_newgame_gameover = document.getElementById("newgame_gameover");
   button_setting_menu = document.getElementById("setting_menu");
   button_setting_gameover = document.getElementById("setting_gameover");
-        
+
    // game elements
    ele_score = document.getElementById("score_value");
    speed_setting = document.getElementsByName("speed");
    wall_setting = document.getElementsByName("wall");
-  
-   // --------------------
 
-        button_newgame_menu.onclick = function(){newGame();};
-        button_newgame_gameover.onclick = function(){newGame();}; 
-        button_newgame_setting.onclick = function(){newGame();}; 
-        button_setting_menu.onclick = function(){showScreen(2);};
-        button_setting_gameover.onclick = function(){showScreen(2)};
+  
+  button_newgame_menu.addEventListener('click',newGame);
+  button_newgame_setting.addEventListener('click',newGame);
+  button_newgame_gameover.addEventListener('click',newGame);
+  button_setting_menu.addEventListener('click',showScreen(2));
+  button_setting_gameover.addEventListener('click',showScreen(2));
 
         setSnakeSpeed(150);
         setWall(1);
@@ -347,9 +358,6 @@ document.addEventListener("DOMContentLoaded",function()
                 }
             }
         }
-    
-
-  
 });
 
 

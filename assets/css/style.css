@@ -3,9 +3,14 @@
 /***************/
 body{
     background-color: black;
+    box-sizing: border-box;
+    display : flex;
+    flex-direction: column;
+     align-items: stretch;
+
 }
 main {
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -17,6 +22,10 @@ main {
 
 h2, h1, h3 {
     font-family: 'Press Start 2P', cursive;
+}
+
+p {
+    font-size:1em;
 }
 
 a {
@@ -67,6 +76,11 @@ nav a {
     color: white;
 }
 
+nav p {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .admin {
     display:flex;
     flex-direction: column;
@@ -100,7 +114,9 @@ img {
 }
 
 .slide3 {
-   background: url(slide3-bg.jpg) center 0 no-repeat fixed;
+   background: url(../img/snake2.jpeg) center 0 no-repeat fixed;
+   height: 100%;
+   background-size: cover;
 }
 
 /*************BANNER************/
@@ -137,7 +153,9 @@ img {
 }
 article {
     width: 90%;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 /*************SHOP************/
@@ -283,11 +301,15 @@ canvas{
 /*   médiaquerries   */
 /*   quand mon site est affiché sur une tablette et que je pars  d'un mobile first (min-width: 768px) */
 /*   quand mon site est affiché sur une tablette et que je pars  d'un PC first (max-width: 1024px) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
 
 main {
 	width: 90%;
 	margin: auto;
+}
+
+p {
+  font-size:1.3em;
 }
 
 .blog {
@@ -297,6 +319,8 @@ main {
 
 article {
     width: 40%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
     
 }

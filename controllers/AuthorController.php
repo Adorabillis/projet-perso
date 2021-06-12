@@ -36,16 +36,18 @@ class AuthorController {
 	
 	public function AddSubmit()
 	{
-		//préparer les données pour les mettre dans la base de données
-		$prenom = $_POST['firstname'];
-		$nom = $_POST['lastname'];
-
-		//mettre les datas en bdd
-		$model = new \Models\Author();
-		$model -> AddAuthor($prenom, $nom);
-            
-		header('location:index.php?page=gestionAuthor');
-			exit;
+		if (isset( $_POST['firstname']) && !empty($_POST['firstname']) && isset( $_POST['lastname']) && !empty($_POST['lastname']))
+		{
+			//préparer les données pour les mettre dans la base de données
+			$prenom = $_POST['firstname'];
+			$nom = $_POST['lastname'];
+	
+			//mettre les datas en bdd
+			$model = new \Models\Author();
+			$model -> AddAuthor($prenom, $nom);
+		}        
+			header('location:index.php?page=gestionAuthor');
+				exit;
 	}
 		public function displayModify()
 	{

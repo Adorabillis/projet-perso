@@ -8,6 +8,7 @@ RewriteRule ^home$  index.php [L]
 RewriteRule ^jeu$  index.php?page=jeu [L]
 RewriteRule ^shop$  index.php?page=shop [L]
 RewriteRule ^cart$  index.php?page=cart [L]
+RewriteRule ^account$  index.php?page=account [L]
 RewriteRule ^about$  index.php?page=about [L]
 # back-office
 RewriteRule ^admin$  index.php?page=admin [L]
@@ -22,5 +23,7 @@ RewriteRule ^connexion$  index.php?page=connexion [L]
 RewriteRule ^newUser$  index.php?page=newUser [L]
 #cart
 RewriteRule ^modifCart-([0-9]+)$  index.php?page=addCart&action=delete&id=$1 [L]
-
+#Gestion taille max des images
+php_value upload_max_filesize 60M
+php_value post_max_size 62M
 
