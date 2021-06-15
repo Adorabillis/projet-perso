@@ -9,7 +9,6 @@ RewriteRule ^jeu$  index.php?page=jeu [L]
 RewriteRule ^shop$  index.php?page=shop [L]
 RewriteRule ^cart$  index.php?page=cart [L]
 RewriteRule ^account$  index.php?page=account [L]
-RewriteRule ^about$  index.php?page=about [L]
 # back-office
 RewriteRule ^admin$  index.php?page=admin [L]
 RewriteRule ^dashboard$  index.php?page=dashboard [L]

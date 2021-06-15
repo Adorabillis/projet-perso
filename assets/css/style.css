@@ -50,6 +50,9 @@ textarea {
 	padding: 1rem;
 	margin-bottom: 2rem;
 }
+form {
+    background-color: hotpink;
+}
 textarea {
 	width: 50%;
 	height: 13em;
@@ -114,8 +117,7 @@ img {
 }
 
 .slide3 {
-   background: url(../img/snake2.jpeg) center 0 no-repeat fixed;
-   height: 100%;
+   background: url(../img/snake2.jpeg) 50% 0% no-repeat fixed;
    background-size: cover;
 }
 
@@ -152,10 +154,11 @@ img {
     align-content: space-between;
 }
 article {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1em;
 }
 
 /*************SHOP************/
@@ -317,12 +320,20 @@ p {
     flex-wrap: wrap;
 }
 
-article {
+.blog article {
     width: 40%;
+}
+
+.shop {
     flex-direction: row;
     flex-wrap: wrap;
 }
-    
+
+.shop article {
+    width: 20%;
+}
+
+
 }
 
 /*   quand mon site est affiché sur une tablette et que je pars  d'un mobile first (min-width: 768px) */
