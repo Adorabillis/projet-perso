@@ -30,4 +30,14 @@ class User extends Database
 			[$email]
 		);
 	}
+	
+	public function getUserById($id)
+	{
+		//requête sql qui permet de trouver un utilisateur particulier
+		return $this -> findOne(
+			"SELECT id_user, email, password, first_name, last_name, phone, adress_line1, adress_line2, postal_code, city, country FROM user
+			WHERE id_user = ?",
+			[$id]
+		);
+	}
 }

@@ -66,7 +66,14 @@ class NewUserController {
 			{
 				$this -> message1 = "Cet email est déjà utilisé";
 			}
+			
 		}
+			$user = $model -> getUserByEmail($email);
+			
+			$_SESSION['id_user'] = $user['id_user'];
+		
+			header('location:index.php?page=account');
+			exit;
 	}
 	
 //	public function IsConnected() 
