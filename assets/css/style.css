@@ -28,6 +28,7 @@ p {
     font-size:1em;
 }
 
+
 a {
     text-decoration: none;
 }
@@ -36,9 +37,24 @@ a {
 /****TABLEAU****/
 /***************/
 
-table {
+.gestion table {
     color: white;
+    width: 70%;
+    margin-bottom:5em;
 }
+
+.gestion table th {
+    background-color: #092102;
+}
+
+.gestion table tr:nth-child(even) {
+    background-color: #80ce87;
+}
+.gestion table tr:nth-child(odd) {
+    background-color: #92e5a1;
+}
+
+
 
 /***************/
 /*****FORMS*****/

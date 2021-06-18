@@ -1,12 +1,12 @@
 <main>
 	
-	<h1>Tous les articles</h1>
+	<h1>Boutique officielle</h1>
 
 	<section class="shop">
 		
 		<?php foreach($products as $product): ?>
 			
-			<article>
+			<article class="login">
 				<div>
 					<h3><?= htmlspecialchars($product['product_name']) ?></h3>
 					<img src="<?=$product['src_img']?>" alt="<?=$product['alt_img']?>">
@@ -15,12 +15,12 @@
 				<div>
 					<p><?=$product['description100']?>...</p>
 					<p><?=$product['price']?> €</p>
-					<button><a href="index.php?page=product<?= $product['id_product'] ?>">Voir plus</a></button>
 					<form>
-					<input id="qte<?= $product['id_product'] ?>"type="text" name="quantity" value="1" />  
-                    <input id="nom<?= $product['id_product'] ?>" type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
-                    <input id="px<?= $product['id_product'] ?>" type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
-                    <input data-id="<?= $product['id_product'] ?>"  type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
+						<input id="qte<?= $product['id_product'] ?>"type="text" name="quantity" value="1" />  
+	                    <input id="nom<?= $product['id_product'] ?>" type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
+	                    <input id="px<?= $product['id_product'] ?>" type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
+	                    <input data-id="<?= $product['id_product'] ?>"  type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
+	                    <button><a href="index.php?page=product<?= $product['id_product'] ?>">Voir plus</a></button>
                     </form>
 				</div>
 			</article>

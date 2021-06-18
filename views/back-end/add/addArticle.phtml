@@ -1,7 +1,7 @@
 <main>
 	<h3>Ajouter un article</h3>
     
-	<form method="post" enctype="multipart/form-data"> <!--action="article.phtml-->
+	<form class="login" method="post" enctype="multipart/form-data"> <!--action="article.phtml-->
 	    <p>
 		    <label for='category'>Catégorie</label>
 			<select name="category" id="category">
@@ -11,22 +11,14 @@
                 <?php endforeach; ?>
             </select>
         </p>
-        <p>
-            <label for='author'>Auteur</label>
-            <select name="author" id="author">
-			    <option value="">--Please choose an option--</option>
-			    <?php foreach($authors as $author): ?>
-                <option value="<?= $author['id_author'] ?>"><?= htmlspecialchars($author['first_name']) ?> <?= htmlspecialchars($author['last_name']) ?></option>
-                <?php endforeach; ?>
-            </select>
-        </p>
+       
 		<p>
 		    <label for='title'>Titre de l'article</label>
 		    <input type="text" name="title" id="title"/>
 		</p>
 		<p>
 		    <label for='texte'>Contenu</label>
-		    <input type="textarea" name="texte" id="texte"/>
+		    <textarea name="texte" id="texte"></textarea>
 		</p>
 		<p>
 			<label for="src">Image</label>
@@ -36,6 +28,16 @@
 			<label for="alt">Alt</label>
 			<input type="text" name="alt" id="alt"/>
 		</p>
+		
+		 <p>
+            <label for='author'>Auteur</label>
+            <select name="author" id="author">
+			    <option value="">--Please choose an option--</option>
+			    <?php foreach($authors as $author): ?>
+                <option value="<?= $author['id_author'] ?>"><?= htmlspecialchars($author['first_name']) ?> <?= htmlspecialchars($author['last_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
 
 			<button type="submit">Enregistrer</button>
 	</form>
