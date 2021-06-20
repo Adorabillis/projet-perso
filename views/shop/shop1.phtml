@@ -20,7 +20,7 @@
 	                    <input id="nom<?= $product['id_product'] ?>" type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
 	                    <input id="px<?= $product['id_product'] ?>" type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
 	                    <input data-id="<?= $product['id_product'] ?>"  type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
-	                    <button><a href="index.php?page=product&id_product=<?= $product['id_product'] ?>">Voir plus</a></button>
+	                    <button><a href="index.php?page=product<?= $product['id_product'] ?>">Voir plus</a></button>
                     </form>
 				</div>
 			</article>

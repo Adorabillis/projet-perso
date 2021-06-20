@@ -33,27 +33,42 @@ a {
     text-decoration: none;
 }
 
+.haut {
+    width: 3em;
+    bottom: 3em;
+    cursor: pointer;
+    position: fixed;
+    right: 3%;
+    z-index: 999;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
 /***************/
 /****TABLEAU****/
 /***************/
-
-.gestion table {
+.gestion {
     color: white;
     width: 70%;
-    margin-bottom:5em;
+    padding: 2em;
+    text-align: center;
+    
 }
 
-.gestion table th {
+.gestion th {
     background-color: #092102;
 }
 
-.gestion table tr:nth-child(even) {
+.gestion tr:nth-child(even) {
     background-color: #80ce87;
 }
-.gestion table tr:nth-child(odd) {
+
+.gestion tr:nth-child(odd) {
     background-color: #92e5a1;
 }
-
 
 
 /***************/

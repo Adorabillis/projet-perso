@@ -6,7 +6,14 @@
 		<p>Dans la catégorie <span><?= htmlspecialchars($product['categoryName']) ?></span></p>
 		<p><?= $product['description'] ?></p>
 		<p><?=htmlspecialchars($product['price'])?></p> 
-		<p><?= $product['newDate']?> </p>
 	</article>
+	
+	<form>
+		<input id="qte<?= $product['id_product'] ?>"type="text" name="quantity" value="1" />  
+	    <input id="nom<?= $product['id_product'] ?>" type="hidden" name="hidden_name" value="<?= $product["product_name"]; ?>" />  
+	    <input id="px<?= $product['id_product'] ?>" type="hidden" name="hidden_price" value="<?=$product["price"]; ?>" />  
+	    <input data-id="<?= $product['id_product'] ?>"  type="submit" name="add_to_cart" class="btn" value="Add to Cart" />  
+     </form>
+	
 	
 </main>

@@ -26,7 +26,7 @@ class ProductController {
 		public function delete()
 	{
 	    $model = new \Models\Product();
-	    $model -> deleteProduct($_GET['id_product']);
+	    $model -> deleteProduct($_GET['id']);
 	}
 	public function displayAdd()
 	{
