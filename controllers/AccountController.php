@@ -14,9 +14,10 @@ class AccountController
 	
 	public function display()
 	{
-		$id = $_SESSION['id_user'];
+		$id = $_SESSION['idUser'];
+		var_dump($id);
 		
-		$model = new \Models\Users();
+		$model = new \Models\User();
 	    $users = $model -> getUserById($id);
 		
 		//afficher le formulaire de connexion

@@ -195,6 +195,11 @@ img {
     background-position: center;
 }
 
+.countdown {
+    background-color: #2ebf2a;
+    padding:3em;
+}
+
 /*************ABOUT************/
 .about {
     display: flex;
