@@ -6,7 +6,7 @@ class Admin extends Database
 {
 	public function getAdminByLogin(string $login):?array
 	{
-		return $this -> findOne("SELECT login, password, name FROM admin WHERE login = ?", [$login]);
+		return $this -> findOne("SELECT login, password, firstname, lastname FROM admin WHERE login = ?", [$login]);
 	}	
 }
 

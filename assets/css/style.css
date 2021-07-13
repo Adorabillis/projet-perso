@@ -1,12 +1,18 @@
+
 /***************/
 /****GENERAL****/
 /***************/
 body{
     background-color: black;
     box-sizing: border-box;
-    display : flex;
+}
+
+.container {
+    height: 100%;
+     display : flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 main {
@@ -34,85 +40,21 @@ a {
 }
 
 .haut {
-    width: 3em;
+    width: 1.5em;
+    height: 1.5em;
     bottom: 3em;
     cursor: pointer;
     position: fixed;
     right: 3%;
     z-index: 999;
+    background-color: #2ebf2a;
+    border:none;
+    border-radius: 0.2em;
 }
 
 .sticky {
     position: sticky;
     top: 0;
-}
-
-/***************/
-/****TABLEAU****/
-/***************/
-.gestion {
-    color: white;
-    width: 70%;
-    padding: 2em;
-    text-align: center;
-    
-}
-
-.gestion th {
-    background-color: #092102;
-}
-
-.gestion tr:nth-child(even) {
-    background-color: #80ce87;
-}
-
-.gestion tr:nth-child(odd) {
-    background-color: #92e5a1;
-}
-
-
-/***************/
-/*****FORMS*****/
-/***************/
-.login {
-    width: 50%;
-    padding: 2em;
-    max-width: 15em;
-    margin: 0 auto 6.25em;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    background-color: rgba(0, 44, 0, 0.8);
-    border-radius: 1em;
-}
-
-.login button {
-    width: 100%;
-    padding: 1em;
-    border: none;
-    background-color: #2ebf2a;
-    border-radius: 1em;
-}
-
-.login p {
-    font-size: 0.8em;
-}
-
-.login a {
-    color: #2ebf2a;
-}
-
-input, 
-textarea {
-	border: 0.2em solid #2ebf2a;
-	border-radius: 1em;
-	margin-bottom: 2rem;
-	background: #f2f2f2;
-	width: 100%;
-}
-
-textarea {
-	width: 50%;
-	height: 13em;
 }
 
 /****************/
@@ -135,13 +77,11 @@ nav {
 nav a {
     color: white;
     transition: all 0.5s;
-    
+    display: block;
 }
 
 nav a:hover {
     color: #2ebf2a;
-    
-    
 }
 
 nav p {
@@ -149,12 +89,18 @@ nav p {
     font-family: 'Orbitron', sans-serif;
 }
 
+nav span {
+    color: white;
+    font-family: 'Orbitron', cursive;
+}
+
+
+
 .admin {
     display:flex;
     flex-direction: column;
-    background-color: gray;
+    
 }
-
 
 img {
     width: 13em;
@@ -234,6 +180,31 @@ article {
     flex-wrap: wrap;
 }
 
+/***************/
+/*****USERS*****/
+/***************/
+
+.account {
+    background: url(../img/snake5.jpeg) center 0 no-repeat fixed;
+    background-size: cover;
+    padding: 3em;
+}
+
+.user {
+    font-family: 'Orbitron', sans-serif;
+    background-color:rgba(46, 191, 42, 0.7 );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border-radius: 0.3em;
+    margin-bottom: 2em;
+}
+
+.user a {
+    padding: 1em;
+}
+
 /****************/
 /*****FOOTER*****/
 /****************/
@@ -244,6 +215,74 @@ footer {
     background-color: #2ebf2a;
     padding: 1em;
 }
+
+/***************/
+/*****FORMS*****/
+/***************/
+.login {
+    width: 50%;
+    padding: 2em;
+    max-width: 15em;
+    margin: 0 auto 6.25em;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 44, 0, 0.8);
+    border-radius: 1em;
+}
+
+.login button {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    background-color: #2ebf2a;
+    border-radius: 1em;
+}
+
+.login p {
+    font-size: 0.8em;
+}
+
+.login a {
+    color: #2ebf2a;
+}
+
+input, 
+textarea {
+	border: 0.2em solid #2ebf2a;
+	border-radius: 1em;
+	margin-bottom: 2rem;
+	background: #f2f2f2;
+	width: 100%;
+}
+
+textarea {
+	width: 50%;
+	height: 13em;
+}
+
+/***************/
+/****TABLEAU****/
+/***************/
+.gestion {
+    color: white;
+    width: 70%;
+    padding: 2em;
+    text-align: center;
+    
+}
+
+.gestion th {
+    background-color: #092102;
+}
+
+.gestion tr:nth-child(even) {
+    background-color: #80ce87;
+}
+
+.gestion tr:nth-child(odd) {
+    background-color: #92e5a1;
+}
+
 
 /****************/
 /***SNAKE GAME***/
@@ -399,6 +438,43 @@ p {
     width: 20%;
 }
 
+nav ul {
+    list-style-type: none;
+}
+
+.dropdown {
+position: relative;
+display: flex;
+flex-direction: column;
+}
+
+.dropdown-child {
+display: none;
+ box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 12, 0, 0.6);
+    border-radius: 1em;
+position: absolute;
+width: 100%;
+z-index: 1000;
+transition: all 0.5s;
+}
+
+.dropdown:hover .dropdown-child {
+display: block;
+flex-direction: column;
+padding: 1em;
+}
+
+.dropdown-child li {
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-child a {
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 0.5em;
+} 
 
 }
 
@@ -411,5 +487,10 @@ p {
 article {
     width: 20%;
 }
+
+.admin {
+    margin-right: 4em;
+}
+
       
 }

@@ -62,7 +62,7 @@ class AdminController
 			{
 				//le mot de passe correcpond
 				//connecter l'utilisateur
-				$_SESSION['admin'] = $admin['prenom'].' '.$admin['nom'];
+				$_SESSION['admin'] = $admin['firstname'].' '.$admin['lastname'];
 				//redirige vers la page tableau de bord du backoffice
 				header('location:index.php?page=dashboard');
 				exit;

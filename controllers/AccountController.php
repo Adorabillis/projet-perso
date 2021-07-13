@@ -15,8 +15,6 @@ class AccountController
 	public function display()
 	{
 		$id = $_SESSION['idUser'];
-		var_dump($id);
-		
 		$model = new \Models\User();
 	    $users = $model -> getUserById($id);
 		
